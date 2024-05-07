@@ -1,0 +1,1127 @@
+[0mroot [8] Events->Print([D[0m[38;5;83m[1m()
+[0m******************************************************************************
+*Tree    :Events    : Events                                                 *
+*Entries :     5000 : Total =     22155044908 bytes  File  Size = 2204060518 *
+*        :          : Tree compression factor =  10.05                       *
+******************************************************************************
+*Br    0 :run       : run/i                                                  *
+*Entries :     5000 : Total  Size=      20913 bytes  File Size  =       1014 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  20.15     *
+*............................................................................*
+*Br    1 :luminosityBlock : luminosityBlock/i                                *
+*Entries :     5000 : Total  Size=      21033 bytes  File Size  =       1094 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  18.74     *
+*............................................................................*
+*Br    2 :event     : event/l                                                *
+*Entries :     5000 : Total  Size=      41351 bytes  File Size  =       8417 *
+*Baskets :       11 : Basket Size=       3488 bytes  Compression=   4.85     *
+*............................................................................*
+*Br    3 :bunchCrossing : bunchCrossing/i                                    *
+*Entries :     5000 : Total  Size=      21013 bytes  File Size  =       1074 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  19.08     *
+*............................................................................*
+*Br    4 :nRecHitHBHE : Int_t HCAL barrel and endcap rec hits                *
+*Entries :     5000 : Total  Size=      21011 bytes  File Size  =       6810 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=   3.01     *
+*............................................................................*
+*Br    5 :RecHitHBHE_depth : Int_t depth                                     *
+*Entries :     5000 : Total  Size=  177779822 bytes  File Size  =     456534 *
+*Baskets :      967 : Basket Size=     495104 bytes  Compression= 389.37     *
+*............................................................................*
+*Br    6 :RecHitHBHE_detId : Int_t detId                                     *
+*Entries :     5000 : Total  Size=  177779822 bytes  File Size  =    9284670 *
+*Baskets :      967 : Basket Size=     495104 bytes  Compression=  19.15     *
+*............................................................................*
+*Br    7 :RecHitHBHE_ieta : Int_t ieta                                       *
+*Entries :     5000 : Total  Size=  177778851 bytes  File Size  =    1884691 *
+*Baskets :      967 : Basket Size=     495104 bytes  Compression=  94.32     *
+*............................................................................*
+*Br    8 :RecHitHBHE_iphi : Int_t iphi                                       *
+*Entries :     5000 : Total  Size=  177778847 bytes  File Size  =    3250519 *
+*Baskets :      967 : Basket Size=     495104 bytes  Compression=  54.69     *
+*............................................................................*
+*Br    9 :RecHitHBHE_energy : Float_t energy                                 *
+*Entries :     5000 : Total  Size=  177780796 bytes  File Size  =   64206129 *
+*Baskets :      967 : Basket Size=     495104 bytes  Compression=   2.77     *
+*............................................................................*
+*Br   10 :RecHitHBHE_time : Float_t hit time                                 *
+*Entries :     5000 : Total  Size=  177778858 bytes  File Size  =    9841795 *
+*Baskets :      967 : Basket Size=     495104 bytes  Compression=  18.06     *
+*............................................................................*
+*Br   11 :nDigiHB   : Int_t                                                  *
+*Entries :     5000 : Total  Size=      20940 bytes  File Size  =       1038 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  19.71     *
+*............................................................................*
+*Br   12 :DigiHB_linkError : Bool_t linkError                                *
+*Entries :     5000 : Total  Size=   45450484 bytes  File Size  =     160856 *
+*Baskets :      620 : Basket Size=     133120 bytes  Compression= 282.47     *
+*............................................................................*
+*Br   13 :DigiHB_capidError : Bool_t capidError                              *
+*Entries :     5000 : Total  Size=   45451108 bytes  File Size  =     161476 *
+*Baskets :      620 : Basket Size=     133120 bytes  Compression= 281.39     *
+*............................................................................*
+*Br   14 :DigiHB_valid : Bool_t valid                                        *
+*Entries :     5000 : Total  Size=   45447988 bytes  File Size  =     955644 *
+*Baskets :      620 : Basket Size=     133120 bytes  Compression=  47.54     *
+*............................................................................*
+*Br   15 :DigiHB_sipmTypes : UChar_t sipmTypes                               *
+*Entries :     5000 : Total  Size=   45450484 bytes  File Size  =    1037852 *
+*Baskets :      620 : Basket Size=     133120 bytes  Compression=  43.78     *
+*............................................................................*
+*Br   16 :DigiHB_rawId : Int_t rawId                                         *
+*Entries :     5000 : Total  Size=  181602979 bytes  File Size  =    5600600 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  32.42     *
+*............................................................................*
+*Br   17 :DigiHB_ieta : Int_t ieta                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    2154612 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  84.27     *
+*............................................................................*
+*Br   18 :DigiHB_iphi : Int_t iphi                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    1926184 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  94.27     *
+*............................................................................*
+*Br   19 :DigiHB_depth : Int_t depth                                         *
+*Entries :     5000 : Total  Size=  181602979 bytes  File Size  =    1567460 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 115.84     *
+*............................................................................*
+*Br   20 :DigiHB_subdet : Int_t subdet                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =    1487132 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.10     *
+*............................................................................*
+*Br   21 :DigiHB_flags : Int_t flags                                         *
+*Entries :     5000 : Total  Size=  181602979 bytes  File Size  =    4349132 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  41.75     *
+*............................................................................*
+*Br   22 :DigiHB_soi : Int_t soi                                             *
+*Entries :     5000 : Total  Size=  181600355 bytes  File Size  =    1483264 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.42     *
+*............................................................................*
+*Br   23 :DigiHB_adc0 : Int_t adc0                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =   14783272 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  12.28     *
+*............................................................................*
+*Br   24 :DigiHB_tdc0 : Int_t tdc0                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    1484572 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.31     *
+*............................................................................*
+*Br   25 :DigiHB_capid0 : Int_t capid0                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =     331376 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 547.95     *
+*............................................................................*
+*Br   26 :DigiHB_adc1 : Int_t adc1                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =   14687772 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  12.36     *
+*............................................................................*
+*Br   27 :DigiHB_tdc1 : Int_t tdc1                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    1484572 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.31     *
+*............................................................................*
+*Br   28 :DigiHB_capid1 : Int_t capid1                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =    1487132 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.10     *
+*............................................................................*
+*Br   29 :DigiHB_adc2 : Int_t adc2                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =   15060784 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  12.06     *
+*............................................................................*
+*Br   30 :DigiHB_tdc2 : Int_t tdc2                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    1704232 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 106.54     *
+*............................................................................*
+*Br   31 :DigiHB_capid2 : Int_t capid2                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =    1485540 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.23     *
+*............................................................................*
+*Br   32 :DigiHB_adc3 : Int_t adc3                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =   18708532 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   9.71     *
+*............................................................................*
+*Br   33 :DigiHB_tdc3 : Int_t tdc3                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    2582228 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  70.32     *
+*............................................................................*
+*Br   34 :DigiHB_capid3 : Int_t capid3                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =    1487188 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.09     *
+*............................................................................*
+*Br   35 :DigiHB_adc4 : Int_t adc4                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =   17088800 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=  10.63     *
+*............................................................................*
+*Br   36 :DigiHB_tdc4 : Int_t tdc4                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    1484572 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.31     *
+*............................................................................*
+*Br   37 :DigiHB_capid4 : Int_t capid4                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =     331376 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 547.95     *
+*............................................................................*
+*Br   38 :DigiHB_adc5 : Int_t adc5                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =   18495268 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   9.82     *
+*............................................................................*
+*Br   39 :DigiHB_tdc5 : Int_t tdc5                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    1485592 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.22     *
+*............................................................................*
+*Br   40 :DigiHB_capid5 : Int_t capid5                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =    1487132 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.10     *
+*............................................................................*
+*Br   41 :DigiHB_adc6 : Int_t adc6                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =   18868844 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   9.62     *
+*............................................................................*
+*Br   42 :DigiHB_tdc6 : Int_t tdc6                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    1485348 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.24     *
+*............................................................................*
+*Br   43 :DigiHB_capid6 : Int_t capid6                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =    1485540 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.23     *
+*............................................................................*
+*Br   44 :DigiHB_adc7 : Int_t adc7                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =   19122284 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   9.50     *
+*............................................................................*
+*Br   45 :DigiHB_tdc7 : Int_t tdc7                                           *
+*Entries :     5000 : Total  Size=  181601667 bytes  File Size  =    1492732 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 121.64     *
+*............................................................................*
+*Br   46 :DigiHB_capid7 : Int_t capid7                                       *
+*Entries :     5000 : Total  Size=  181604291 bytes  File Size  =    1487188 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression= 122.09     *
+*............................................................................*
+*Br   47 :DigiHB_fc0 : Float_t fc0                                           *
+*Entries :     5000 : Total  Size=  181600362 bytes  File Size  =   63020820 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   2.88     *
+*............................................................................*
+*Br   48 :DigiHB_pedestalfc0 : Float_t pedestalfc0                           *
+*Entries :     5000 : Total  Size=  181610858 bytes  File Size  =   27658536 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   6.57     *
+*............................................................................*
+*Br   49 :DigiHB_fc1 : Float_t fc1                                           *
+*Entries :     5000 : Total  Size=  181600362 bytes  File Size  =   63124520 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   2.88     *
+*............................................................................*
+*Br   50 :DigiHB_pedestalfc1 : Float_t pedestalfc1                           *
+*Entries :     5000 : Total  Size=  181610858 bytes  File Size  =   27230144 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   6.67     *
+*............................................................................*
+*Br   51 :DigiHB_fc2 : Float_t fc2                                           *
+*Entries :     5000 : Total  Size=  181600362 bytes  File Size  =   63695796 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   2.85     *
+*............................................................................*
+*Br   52 :DigiHB_pedestalfc2 : Float_t pedestalfc2                           *
+*Entries :     5000 : Total  Size=  181610858 bytes  File Size  =   27439148 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   6.62     *
+*............................................................................*
+*Br   53 :DigiHB_fc3 : Float_t fc3                                           *
+*Entries :     5000 : Total  Size=  181600362 bytes  File Size  =   77033112 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   2.36     *
+*............................................................................*
+*Br   54 :DigiHB_pedestalfc3 : Float_t pedestalfc3                           *
+*Entries :     5000 : Total  Size=  181610858 bytes  File Size  =   27629464 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   6.57     *
+*............................................................................*
+*Br   55 :DigiHB_fc4 : Float_t fc4                                           *
+*Entries :     5000 : Total  Size=  181600362 bytes  File Size  =   73023456 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   2.49     *
+*............................................................................*
+*Br   56 :DigiHB_pedestalfc4 : Float_t pedestalfc4                           *
+*Entries :     5000 : Total  Size=  181610858 bytes  File Size  =   27658536 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   6.57     *
+*............................................................................*
+*Br   57 :DigiHB_fc5 : Float_t fc5                                           *
+*Entries :     5000 : Total  Size=  181600362 bytes  File Size  =   77679984 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   2.34     *
+*............................................................................*
+*Br   58 :DigiHB_pedestalfc5 : Float_t pedestalfc5                           *
+*Entries :     5000 : Total  Size=  181610858 bytes  File Size  =   27230144 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   6.67     *
+*............................................................................*
+*Br   59 :DigiHB_fc6 : Float_t fc6                                           *
+*Entries :     5000 : Total  Size=  181600362 bytes  File Size  =   79068436 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   2.30     *
+*............................................................................*
+*Br   60 :DigiHB_pedestalfc6 : Float_t pedestalfc6                           *
+*Entries :     5000 : Total  Size=  181610858 bytes  File Size  =   27439148 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   6.62     *
+*............................................................................*
+*Br   61 :DigiHB_fc7 : Float_t fc7                                           *
+*Entries :     5000 : Total  Size=  181600362 bytes  File Size  =   79430332 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   2.29     *
+*............................................................................*
+*Br   62 :DigiHB_pedestalfc7 : Float_t pedestalfc7                           *
+*Entries :     5000 : Total  Size=  181610858 bytes  File Size  =   27629464 *
+*Baskets :     1308 : Basket Size=     506880 bytes  Compression=   6.57     *
+*............................................................................*
+*Br   63 :nDigiHE   : Int_t                                                  *
+*Entries :     5000 : Total  Size=      20940 bytes  File Size  =       1038 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  19.71     *
+*............................................................................*
+*Br   64 :DigiHE_linkError : Bool_t linkError                                *
+*Entries :     5000 : Total  Size=   33920992 bytes  File Size  =     140276 *
+*Baskets :      536 : Basket Size=     101376 bytes  Compression= 241.74     *
+*............................................................................*
+*Br   65 :DigiHE_capidError : Bool_t capidError                              *
+*Entries :     5000 : Total  Size=   33921532 bytes  File Size  =     140812 *
+*Baskets :      536 : Basket Size=     101376 bytes  Compression= 240.82     *
+*............................................................................*
+*Br   66 :DigiHE_valid : Bool_t valid                                        *
+*Entries :     5000 : Total  Size=   33918832 bytes  File Size  =    1180780 *
+*Baskets :      536 : Basket Size=     101376 bytes  Compression=  28.72     *
+*............................................................................*
+*Br   67 :DigiHE_sipmTypes : UChar_t sipmTypes                               *
+*Entries :     5000 : Total  Size=   33920992 bytes  File Size  =    1303816 *
+*Baskets :      536 : Basket Size=     101376 bytes  Compression=  26.01     *
+*............................................................................*
+*Br   68 :DigiHE_rawId : Int_t rawId                                         *
+*Entries :     5000 : Total  Size=  135520581 bytes  File Size  =    5795980 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  23.38     *
+*............................................................................*
+*Br   69 :DigiHE_ieta : Int_t ieta                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    2647038 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  51.19     *
+*............................................................................*
+*Br   70 :DigiHE_iphi : Int_t iphi                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    2710070 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  50.00     *
+*............................................................................*
+*Br   71 :DigiHE_depth : Int_t depth                                         *
+*Entries :     5000 : Total  Size=  135520581 bytes  File Size  =    1892460 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  71.60     *
+*............................................................................*
+*Br   72 :DigiHE_subdet : Int_t subdet                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =    1681810 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.57     *
+*............................................................................*
+*Br   73 :DigiHE_flags : Int_t flags                                         *
+*Entries :     5000 : Total  Size=  135520581 bytes  File Size  =    5455488 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  24.84     *
+*............................................................................*
+*Br   74 :DigiHE_soi : Int_t soi                                             *
+*Entries :     5000 : Total  Size=  135518001 bytes  File Size  =    1681076 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.60     *
+*............................................................................*
+*Br   75 :DigiHE_adc0 : Int_t adc0                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    9298370 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  14.57     *
+*............................................................................*
+*Br   76 :DigiHE_tdc0 : Int_t tdc0                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    1685362 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.39     *
+*............................................................................*
+*Br   77 :DigiHE_capid0 : Int_t capid0                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =     316494 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression= 428.11     *
+*............................................................................*
+*Br   78 :DigiHE_adc1 : Int_t adc1                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    9250486 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  14.65     *
+*............................................................................*
+*Br   79 :DigiHE_tdc1 : Int_t tdc1                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    1685362 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.39     *
+*............................................................................*
+*Br   80 :DigiHE_capid1 : Int_t capid1                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =    1684238 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.45     *
+*............................................................................*
+*Br   81 :DigiHE_adc2 : Int_t adc2                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    9508738 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  14.25     *
+*............................................................................*
+*Br   82 :DigiHE_tdc2 : Int_t tdc2                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    1911326 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  70.89     *
+*............................................................................*
+*Br   83 :DigiHE_capid2 : Int_t capid2                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =    1681810 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.57     *
+*............................................................................*
+*Br   84 :DigiHE_adc3 : Int_t adc3                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =   13595970 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   9.97     *
+*............................................................................*
+*Br   85 :DigiHE_tdc3 : Int_t tdc3                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    7568210 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  17.90     *
+*............................................................................*
+*Br   86 :DigiHE_capid3 : Int_t capid3                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =    1684886 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.42     *
+*............................................................................*
+*Br   87 :DigiHE_adc4 : Int_t adc4                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =   12240310 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  11.07     *
+*............................................................................*
+*Br   88 :DigiHE_tdc4 : Int_t tdc4                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    1695410 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  79.92     *
+*............................................................................*
+*Br   89 :DigiHE_capid4 : Int_t capid4                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =     316494 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression= 428.11     *
+*............................................................................*
+*Br   90 :DigiHE_adc5 : Int_t adc5                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =   12898298 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  10.50     *
+*............................................................................*
+*Br   91 :DigiHE_tdc5 : Int_t tdc5                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    1688718 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.23     *
+*............................................................................*
+*Br   92 :DigiHE_capid5 : Int_t capid5                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =    1684238 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.45     *
+*............................................................................*
+*Br   93 :DigiHE_adc6 : Int_t adc6                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =   13194466 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  10.27     *
+*............................................................................*
+*Br   94 :DigiHE_tdc6 : Int_t tdc6                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    1722422 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  78.66     *
+*............................................................................*
+*Br   95 :DigiHE_capid6 : Int_t capid6                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =    1681810 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.57     *
+*............................................................................*
+*Br   96 :DigiHE_adc7 : Int_t adc7                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =   13534158 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  10.01     *
+*............................................................................*
+*Br   97 :DigiHE_tdc7 : Int_t tdc7                                           *
+*Entries :     5000 : Total  Size=  135519291 bytes  File Size  =    3289270 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  41.19     *
+*............................................................................*
+*Br   98 :DigiHE_capid7 : Int_t capid7                                       *
+*Entries :     5000 : Total  Size=  135521871 bytes  File Size  =    1684886 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=  80.42     *
+*............................................................................*
+*Br   99 :DigiHE_fc0 : Float_t fc0                                           *
+*Entries :     5000 : Total  Size=  135518008 bytes  File Size  =   39301420 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   3.45     *
+*............................................................................*
+*Br  100 :DigiHE_pedestalfc0 : Float_t pedestalfc0                           *
+*Entries :     5000 : Total  Size=  135528328 bytes  File Size  =   21036776 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   6.44     *
+*............................................................................*
+*Br  101 :DigiHE_fc1 : Float_t fc1                                           *
+*Entries :     5000 : Total  Size=  135518008 bytes  File Size  =   39253008 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   3.45     *
+*............................................................................*
+*Br  102 :DigiHE_pedestalfc1 : Float_t pedestalfc1                           *
+*Entries :     5000 : Total  Size=  135528328 bytes  File Size  =   20974860 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   6.46     *
+*............................................................................*
+*Br  103 :DigiHE_fc2 : Float_t fc2                                           *
+*Entries :     5000 : Total  Size=  135518008 bytes  File Size  =   39696020 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   3.41     *
+*............................................................................*
+*Br  104 :DigiHE_pedestalfc2 : Float_t pedestalfc2                           *
+*Entries :     5000 : Total  Size=  135528328 bytes  File Size  =   21001836 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   6.45     *
+*............................................................................*
+*Br  105 :DigiHE_fc3 : Float_t fc3                                           *
+*Entries :     5000 : Total  Size=  135518008 bytes  File Size  =   54804164 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   2.47     *
+*............................................................................*
+*Br  106 :DigiHE_pedestalfc3 : Float_t pedestalfc3                           *
+*Entries :     5000 : Total  Size=  135528328 bytes  File Size  =   20981932 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   6.46     *
+*............................................................................*
+*Br  107 :DigiHE_fc4 : Float_t fc4                                           *
+*Entries :     5000 : Total  Size=  135518008 bytes  File Size  =   51552416 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   2.63     *
+*............................................................................*
+*Br  108 :DigiHE_pedestalfc4 : Float_t pedestalfc4                           *
+*Entries :     5000 : Total  Size=  135528328 bytes  File Size  =   21036776 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   6.44     *
+*............................................................................*
+*Br  109 :DigiHE_fc5 : Float_t fc5                                           *
+*Entries :     5000 : Total  Size=  135518008 bytes  File Size  =   52956548 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   2.56     *
+*............................................................................*
+*Br  110 :DigiHE_pedestalfc5 : Float_t pedestalfc5                           *
+*Entries :     5000 : Total  Size=  135528328 bytes  File Size  =   20974860 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   6.46     *
+*............................................................................*
+*Br  111 :DigiHE_fc6 : Float_t fc6                                           *
+*Entries :     5000 : Total  Size=  135518008 bytes  File Size  =   55504408 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   2.44     *
+*............................................................................*
+*Br  112 :DigiHE_pedestalfc6 : Float_t pedestalfc6                           *
+*Entries :     5000 : Total  Size=  135528328 bytes  File Size  =   21001836 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   6.45     *
+*............................................................................*
+*Br  113 :DigiHE_fc7 : Float_t fc7                                           *
+*Entries :     5000 : Total  Size=  135518008 bytes  File Size  =   52935424 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   2.56     *
+*............................................................................*
+*Br  114 :DigiHE_pedestalfc7 : Float_t pedestalfc7                           *
+*Entries :     5000 : Total  Size=  135528328 bytes  File Size  =   20981932 *
+*Baskets :     1286 : Basket Size=     380416 bytes  Compression=   6.46     *
+*............................................................................*
+*Br  115 :nDigiHF   : Int_t                                                  *
+*Entries :     5000 : Total  Size=      20940 bytes  File Size  =       1038 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  19.71     *
+*............................................................................*
+*Br  116 :DigiHF_linkError : Bool_t linkError                                *
+*Entries :     5000 : Total  Size=   17341330 bytes  File Size  =      94992 *
+*Baskets :      362 : Basket Size=      55808 bytes  Compression= 182.48     *
+*............................................................................*
+*Br  117 :DigiHF_valid : Bool_t valid                                        *
+*Entries :     5000 : Total  Size=   17339866 bytes  File Size  =      93988 *
+*Baskets :      362 : Basket Size=      55808 bytes  Compression= 184.41     *
+*............................................................................*
+*Br  118 :DigiHF_rawId : Int_t rawId                                         *
+*Entries :     5000 : Total  Size=   69226081 bytes  File Size  =    2066696 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=  33.49     *
+*............................................................................*
+*Br  119 :DigiHF_ieta : Int_t ieta                                           *
+*Entries :     5000 : Total  Size=   69225291 bytes  File Size  =     267450 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 258.77     *
+*............................................................................*
+*Br  120 :DigiHF_iphi : Int_t iphi                                           *
+*Entries :     5000 : Total  Size=   69225291 bytes  File Size  =     412314 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 167.86     *
+*............................................................................*
+*Br  121 :DigiHF_depth : Int_t depth                                         *
+*Entries :     5000 : Total  Size=   69226081 bytes  File Size  =     253932 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 272.55     *
+*............................................................................*
+*Br  122 :DigiHF_subdet : Int_t subdet                                       *
+*Entries :     5000 : Total  Size=   69226871 bytes  File Size  =     196710 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 351.84     *
+*............................................................................*
+*Br  123 :DigiHF_flags : Int_t flags                                         *
+*Entries :     5000 : Total  Size=   69226081 bytes  File Size  =     753016 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=  91.91     *
+*............................................................................*
+*Br  124 :DigiHF_soi : Int_t soi                                             *
+*Entries :     5000 : Total  Size=   69224501 bytes  File Size  =     194352 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 356.10     *
+*............................................................................*
+*Br  125 :DigiHF_adc0 : Int_t adc0                                           *
+*Entries :     5000 : Total  Size=   69225291 bytes  File Size  =    4433830 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=  15.61     *
+*............................................................................*
+*Br  126 :DigiHF_tdc0 : Int_t tdc0                                           *
+*Entries :     5000 : Total  Size=   69225291 bytes  File Size  =     195142 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 354.66     *
+*............................................................................*
+*Br  127 :DigiHF_capid0 : Int_t capid0                                       *
+*Entries :     5000 : Total  Size=   69226871 bytes  File Size  =     196710 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 351.84     *
+*............................................................................*
+*Br  128 :DigiHF_adc1 : Int_t adc1                                           *
+*Entries :     5000 : Total  Size=   69225291 bytes  File Size  =    8196206 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=   8.44     *
+*............................................................................*
+*Br  129 :DigiHF_tdc1 : Int_t tdc1                                           *
+*Entries :     5000 : Total  Size=   69225291 bytes  File Size  =    3461858 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=  19.99     *
+*............................................................................*
+*Br  130 :DigiHF_capid1 : Int_t capid1                                       *
+*Entries :     5000 : Total  Size=   69226871 bytes  File Size  =     196710 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 351.84     *
+*............................................................................*
+*Br  131 :DigiHF_adc2 : Int_t adc2                                           *
+*Entries :     5000 : Total  Size=   69225291 bytes  File Size  =    7630102 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=   9.07     *
+*............................................................................*
+*Br  132 :DigiHF_tdc2 : Int_t tdc2                                           *
+*Entries :     5000 : Total  Size=   69225291 bytes  File Size  =     332074 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 208.41     *
+*............................................................................*
+*Br  133 :DigiHF_capid2 : Int_t capid2                                       *
+*Entries :     5000 : Total  Size=   69226871 bytes  File Size  =     195566 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 353.90     *
+*............................................................................*
+*Br  134 :DigiHF_fc0 : Float_t fc0                                           *
+*Entries :     5000 : Total  Size=   69224508 bytes  File Size  =    7369000 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=   9.39     *
+*............................................................................*
+*Br  135 :DigiHF_pedestalfc0 : Float_t pedestalfc0                           *
+*Entries :     5000 : Total  Size=   69230828 bytes  File Size  =   12218208 *
+*Baskets :      786 : Basket Size=     198656 bytes  Compression=   5.66     *
+*............................................................................*
+*Br  136 :DigiHF_ok0 : Float_t ok0                                           *
+*Entries :     5000 : Total  Size=   69224508 bytes  File Size  =     197492 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 350.44     *
+*............................................................................*
+*Br  137 :DigiHF_fc1 : Float_t fc1                                           *
+*Entries :     5000 : Total  Size=   69224508 bytes  File Size  =   15757276 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=   4.39     *
+*............................................................................*
+*Br  138 :DigiHF_pedestalfc1 : Float_t pedestalfc1                           *
+*Entries :     5000 : Total  Size=   69230828 bytes  File Size  =   12409944 *
+*Baskets :      786 : Basket Size=     198656 bytes  Compression=   5.58     *
+*............................................................................*
+*Br  139 :DigiHF_ok1 : Float_t ok1                                           *
+*Entries :     5000 : Total  Size=   69224508 bytes  File Size  =     197492 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 350.44     *
+*............................................................................*
+*Br  140 :DigiHF_fc2 : Float_t fc2                                           *
+*Entries :     5000 : Total  Size=   69224508 bytes  File Size  =   14038712 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression=   4.93     *
+*............................................................................*
+*Br  141 :DigiHF_pedestalfc2 : Float_t pedestalfc2                           *
+*Entries :     5000 : Total  Size=   69230828 bytes  File Size  =   12390808 *
+*Baskets :      786 : Basket Size=     198656 bytes  Compression=   5.59     *
+*............................................................................*
+*Br  142 :DigiHF_ok2 : Float_t ok2                                           *
+*Entries :     5000 : Total  Size=   69224508 bytes  File Size  =     197492 *
+*Baskets :      786 : Basket Size=     198144 bytes  Compression= 350.44     *
+*............................................................................*
+*Br  143 :nDigiHO   : Int_t                                                  *
+*Entries :     5000 : Total  Size=      20940 bytes  File Size  =       1038 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  19.71     *
+*............................................................................*
+*Br  144 :DigiHO_valid : Bool_t valid                                        *
+*Entries :     5000 : Total  Size=   10853980 bytes  File Size  =     979464 *
+*Baskets :      308 : Basket Size=      37888 bytes  Compression=  11.07     *
+*............................................................................*
+*Br  145 :DigiHO_rawId : Int_t rawId                                         *
+*Entries :     5000 : Total  Size=   43287987 bytes  File Size  =    3367288 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  12.85     *
+*............................................................................*
+*Br  146 :DigiHO_ieta : Int_t ieta                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    1561028 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  27.72     *
+*............................................................................*
+*Br  147 :DigiHO_iphi : Int_t iphi                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    1782828 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  24.27     *
+*............................................................................*
+*Br  148 :DigiHO_depth : Int_t depth                                         *
+*Entries :     5000 : Total  Size=   43287987 bytes  File Size  =    1272856 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.00     *
+*............................................................................*
+*Br  149 :DigiHO_subdet : Int_t subdet                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =    1262224 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.29     *
+*............................................................................*
+*Br  150 :DigiHO_fiberIdleOffset : Int_t fiberIdleOffset                     *
+*Entries :     5000 : Total  Size=   43294227 bytes  File Size  =    1268016 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  151 :DigiHO_soi : Int_t soi                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1259652 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.35     *
+*............................................................................*
+*Br  152 :DigiHO_adc0 : Int_t adc0                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3121672 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.86     *
+*............................................................................*
+*Br  153 :DigiHO_capid0 : Int_t capid0                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =    1272528 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.01     *
+*............................................................................*
+*Br  154 :DigiHO_fiber0 : Int_t fiber0                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  155 :DigiHO_fiberChan0 : Int_t fiberChan0                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  156 :DigiHO_dv0 : Int_t dv0                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  157 :DigiHO_er0 : Int_t er0                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  158 :DigiHO_adc1 : Int_t adc1                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3129480 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.83     *
+*............................................................................*
+*Br  159 :DigiHO_capid1 : Int_t capid1                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  160 :DigiHO_fiber1 : Int_t fiber1                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  161 :DigiHO_fiberChan1 : Int_t fiberChan1                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  162 :DigiHO_dv1 : Int_t dv1                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  163 :DigiHO_er1 : Int_t er1                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  164 :DigiHO_adc2 : Int_t adc2                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3173068 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.64     *
+*............................................................................*
+*Br  165 :DigiHO_capid2 : Int_t capid2                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =    1269748 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.08     *
+*............................................................................*
+*Br  166 :DigiHO_fiber2 : Int_t fiber2                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  167 :DigiHO_fiberChan2 : Int_t fiberChan2                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  168 :DigiHO_dv2 : Int_t dv2                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  169 :DigiHO_er2 : Int_t er2                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  170 :DigiHO_adc3 : Int_t adc3                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3281260 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.19     *
+*............................................................................*
+*Br  171 :DigiHO_capid3 : Int_t capid3                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =    1272532 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.01     *
+*............................................................................*
+*Br  172 :DigiHO_fiber3 : Int_t fiber3                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  173 :DigiHO_fiberChan3 : Int_t fiberChan3                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  174 :DigiHO_dv3 : Int_t dv3                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  175 :DigiHO_er3 : Int_t er3                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  176 :DigiHO_adc4 : Int_t adc4                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3279368 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.20     *
+*............................................................................*
+*Br  177 :DigiHO_capid4 : Int_t capid4                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =    1272528 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.01     *
+*............................................................................*
+*Br  178 :DigiHO_fiber4 : Int_t fiber4                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  179 :DigiHO_fiberChan4 : Int_t fiberChan4                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  180 :DigiHO_dv4 : Int_t dv4                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  181 :DigiHO_er4 : Int_t er4                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  182 :DigiHO_adc5 : Int_t adc5                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3282664 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.18     *
+*............................................................................*
+*Br  183 :DigiHO_capid5 : Int_t capid5                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  184 :DigiHO_fiber5 : Int_t fiber5                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  185 :DigiHO_fiberChan5 : Int_t fiberChan5                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  186 :DigiHO_dv5 : Int_t dv5                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  187 :DigiHO_er5 : Int_t er5                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  188 :DigiHO_adc6 : Int_t adc6                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3181612 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.60     *
+*............................................................................*
+*Br  189 :DigiHO_capid6 : Int_t capid6                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =    1269748 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.08     *
+*............................................................................*
+*Br  190 :DigiHO_fiber6 : Int_t fiber6                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  191 :DigiHO_fiberChan6 : Int_t fiberChan6                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  192 :DigiHO_dv6 : Int_t dv6                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  193 :DigiHO_er6 : Int_t er6                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  194 :DigiHO_adc7 : Int_t adc7                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3131988 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.82     *
+*............................................................................*
+*Br  195 :DigiHO_capid7 : Int_t capid7                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =    1272532 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.01     *
+*............................................................................*
+*Br  196 :DigiHO_fiber7 : Int_t fiber7                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  197 :DigiHO_fiberChan7 : Int_t fiberChan7                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  198 :DigiHO_dv7 : Int_t dv7                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  199 :DigiHO_er7 : Int_t er7                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  200 :DigiHO_adc8 : Int_t adc8                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3123296 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.86     *
+*............................................................................*
+*Br  201 :DigiHO_capid8 : Int_t capid8                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =    1272528 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.01     *
+*............................................................................*
+*Br  202 :DigiHO_fiber8 : Int_t fiber8                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  203 :DigiHO_fiberChan8 : Int_t fiberChan8                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  204 :DigiHO_dv8 : Int_t dv8                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  205 :DigiHO_er8 : Int_t er8                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  206 :DigiHO_adc9 : Int_t adc9                                           *
+*Entries :     5000 : Total  Size=   43287363 bytes  File Size  =    3125944 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  13.84     *
+*............................................................................*
+*Br  207 :DigiHO_capid9 : Int_t capid9                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  208 :DigiHO_fiber9 : Int_t fiber9                                       *
+*Entries :     5000 : Total  Size=   43288611 bytes  File Size  =     157852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 274.15     *
+*............................................................................*
+*Br  209 :DigiHO_fiberChan9 : Int_t fiberChan9                               *
+*Entries :     5000 : Total  Size=   43291107 bytes  File Size  =     160332 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 269.93     *
+*............................................................................*
+*Br  210 :DigiHO_dv9 : Int_t dv9                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =    1267936 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=  34.13     *
+*............................................................................*
+*Br  211 :DigiHO_er9 : Int_t er9                                             *
+*Entries :     5000 : Total  Size=   43286739 bytes  File Size  =     154852 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression= 279.45     *
+*............................................................................*
+*Br  212 :DigiHO_fc0 : Float_t fc0                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   13415096 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.23     *
+*............................................................................*
+*Br  213 :DigiHO_pedestalfc0 : Float_t pedestalfc0                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7054660 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.13     *
+*............................................................................*
+*Br  214 :DigiHO_fc1 : Float_t fc1                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   13530472 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.20     *
+*............................................................................*
+*Br  215 :DigiHO_pedestalfc1 : Float_t pedestalfc1                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7102832 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.09     *
+*............................................................................*
+*Br  216 :DigiHO_fc2 : Float_t fc2                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   13679144 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.16     *
+*............................................................................*
+*Br  217 :DigiHO_pedestalfc2 : Float_t pedestalfc2                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7073620 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.12     *
+*............................................................................*
+*Br  218 :DigiHO_fc3 : Float_t fc3                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   14246612 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.04     *
+*............................................................................*
+*Br  219 :DigiHO_pedestalfc3 : Float_t pedestalfc3                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7097928 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.10     *
+*............................................................................*
+*Br  220 :DigiHO_fc4 : Float_t fc4                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   14304956 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.03     *
+*............................................................................*
+*Br  221 :DigiHO_pedestalfc4 : Float_t pedestalfc4                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7054660 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.13     *
+*............................................................................*
+*Br  222 :DigiHO_fc5 : Float_t fc5                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   14355192 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.01     *
+*............................................................................*
+*Br  223 :DigiHO_pedestalfc5 : Float_t pedestalfc5                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7102832 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.09     *
+*............................................................................*
+*Br  224 :DigiHO_fc6 : Float_t fc6                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   13771132 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.14     *
+*............................................................................*
+*Br  225 :DigiHO_pedestalfc6 : Float_t pedestalfc6                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7073620 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.12     *
+*............................................................................*
+*Br  226 :DigiHO_fc7 : Float_t fc7                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   13506360 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.20     *
+*............................................................................*
+*Br  227 :DigiHO_pedestalfc7 : Float_t pedestalfc7                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7097928 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.10     *
+*............................................................................*
+*Br  228 :DigiHO_fc8 : Float_t fc8                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   13432780 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.22     *
+*............................................................................*
+*Br  229 :DigiHO_pedestalfc8 : Float_t pedestalfc8                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7054660 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.13     *
+*............................................................................*
+*Br  230 :DigiHO_fc9 : Float_t fc9                                           *
+*Entries :     5000 : Total  Size=   43286746 bytes  File Size  =   13529148 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   3.20     *
+*............................................................................*
+*Br  231 :DigiHO_pedestalfc9 : Float_t pedestalfc9                           *
+*Entries :     5000 : Total  Size=   43291738 bytes  File Size  =    7102832 *
+*Baskets :      620 : Basket Size=     126976 bytes  Compression=   6.09     *
+*............................................................................*
+*Br  232 :nRecHitHF : Int_t HCAL forward (HF) rec hits                       *
+*Entries :     5000 : Total  Size=      20984 bytes  File Size  =       1050 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  19.49     *
+*............................................................................*
+*Br  233 :RecHitHF_depth : Int_t depth                                       *
+*Entries :     5000 : Total  Size=   34639915 bytes  File Size  =     170212 *
+*Baskets :      536 : Basket Size=     103424 bytes  Compression= 203.44     *
+*............................................................................*
+*Br  234 :RecHitHF_detId : Int_t detId                                       *
+*Entries :     5000 : Total  Size=   34639915 bytes  File Size  =     692220 *
+*Baskets :      536 : Basket Size=     103424 bytes  Compression=  50.03     *
+*............................................................................*
+*Br  235 :RecHitHF_ieta : Int_t ieta                                         *
+*Entries :     5000 : Total  Size=   34639375 bytes  File Size  =     185696 *
+*Baskets :      536 : Basket Size=     103424 bytes  Compression= 186.48     *
+*............................................................................*
+*Br  236 :RecHitHF_iphi : Int_t iphi                                         *
+*Entries :     5000 : Total  Size=   34639375 bytes  File Size  =     262132 *
+*Baskets :      536 : Basket Size=     103424 bytes  Compression= 132.10     *
+*............................................................................*
+*Br  237 :RecHitHF_energy : Float_t energy                                   *
+*Entries :     5000 : Total  Size=   34640462 bytes  File Size  =   17825264 *
+*Baskets :      536 : Basket Size=     103424 bytes  Compression=   1.94     *
+*............................................................................*
+*Br  238 :RecHitHF_time : Float_t hit time                                   *
+*Entries :     5000 : Total  Size=   34639386 bytes  File Size  =    4227780 *
+*Baskets :      536 : Basket Size=     103424 bytes  Compression=   8.19     *
+*............................................................................*
+*Br  239 :nRecHitHO : Int_t HCAL outer (HO) rec hits                         *
+*Entries :     5000 : Total  Size=      20982 bytes  File Size  =       5718 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=   3.58     *
+*............................................................................*
+*Br  240 :RecHitHO_depth : Int_t depth                                       *
+*Entries :     5000 : Total  Size=   19243321 bytes  File Size  =     105180 *
+*Baskets :      386 : Basket Size=      60928 bytes  Compression= 182.88     *
+*............................................................................*
+*Br  241 :RecHitHO_detId : Int_t detId                                       *
+*Entries :     5000 : Total  Size=   19243321 bytes  File Size  =    2061136 *
+*Baskets :      386 : Basket Size=      60928 bytes  Compression=   9.33     *
+*............................................................................*
+*Br  242 :RecHitHO_ieta : Int_t ieta                                         *
+*Entries :     5000 : Total  Size=   19242931 bytes  File Size  =     350662 *
+*Baskets :      386 : Basket Size=      60928 bytes  Compression=  54.85     *
+*............................................................................*
+*Br  243 :RecHitHO_iphi : Int_t iphi                                         *
+*Entries :     5000 : Total  Size=   19242931 bytes  File Size  =    1336330 *
+*Baskets :      386 : Basket Size=      60928 bytes  Compression=  14.39     *
+*............................................................................*
+*Br  244 :RecHitHO_energy : Float_t energy                                   *
+*Entries :     5000 : Total  Size=   19243718 bytes  File Size  =   11452374 *
+*Baskets :      386 : Basket Size=      60928 bytes  Compression=   1.68     *
+*............................................................................*
+*Br  245 :RecHitHO_time : Float_t hit time                                   *
+*Entries :     5000 : Total  Size=   19242942 bytes  File Size  =   11227738 *
+*Baskets :      386 : Basket Size=      60928 bytes  Compression=   1.71     *
+*............................................................................*
+*Br  246 :uMNio_EventType : UChar_t EventType                                *
+*Entries :     5000 : Total  Size=       5763 bytes  File Size  =       1675 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=   3.14     *
+*............................................................................*
+*Br  247 :uMNio_LaserType : UInt_t LaserType                                 *
+*Entries :     5000 : Total  Size=      21021 bytes  File Size  =       1062 *
+*Baskets :        6 : Basket Size=       3488 bytes  Compression=  19.31     *
+*............................................................................*
+*Br  248 :HLTriggerFirstPath : Bool_t Trigger/flag bit (process: HLT)        *
+*Entries :     5000 : Total  Size=       5803 bytes  File Size  =        516 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.20     *
+*............................................................................*
+*Br  249 :HLT_L1SingleMuOpen : Bool_t Trigger/flag bit (process: HLT)        *
+*Entries :     5000 : Total  Size=       5803 bytes  File Size  =        516 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.20     *
+*............................................................................*
+*Br  250 :HLT_L1SingleMuOpen_DT : Bool_t Trigger/flag bit (process: HLT)     *
+*Entries :     5000 : Total  Size=       5821 bytes  File Size  =        525 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.04     *
+*............................................................................*
+*Br  251 :HLT_L1SingleMuCosmics : Bool_t Trigger/flag bit (process: HLT)     *
+*Entries :     5000 : Total  Size=       5821 bytes  File Size  =        525 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.04     *
+*............................................................................*
+*Br  252 :HLT_L1SingleMu3 : Bool_t Trigger/flag bit (process: HLT)           *
+*Entries :     5000 : Total  Size=       5785 bytes  File Size  =        507 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.36     *
+*............................................................................*
+*Br  253 :HLT_L1SingleMu5 : Bool_t Trigger/flag bit (process: HLT)           *
+*Entries :     5000 : Total  Size=       5785 bytes  File Size  =        507 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.36     *
+*............................................................................*
+*Br  254 :HLT_L1SingleMu7 : Bool_t Trigger/flag bit (process: HLT)           *
+*Entries :     5000 : Total  Size=       5785 bytes  File Size  =        507 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.36     *
+*............................................................................*
+*Br  255 :HLT_L1DoubleMu0 : Bool_t Trigger/flag bit (process: HLT)           *
+*Entries :     5000 : Total  Size=       5785 bytes  File Size  =        507 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.36     *
+*............................................................................*
+*Br  256 :HLT_L1SingleJet8erHE : Bool_t Trigger/flag bit (process: HLT)      *
+*Entries :     5000 : Total  Size=       5815 bytes  File Size  =        522 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.09     *
+*............................................................................*
+*Br  257 :HLT_L1SingleJet10erHE : Bool_t Trigger/flag bit (process: HLT)     *
+*Entries :     5000 : Total  Size=       5821 bytes  File Size  =        525 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.04     *
+*............................................................................*
+*Br  258 :HLT_L1SingleJet12erHE : Bool_t Trigger/flag bit (process: HLT)     *
+*Entries :     5000 : Total  Size=       5821 bytes  File Size  =        525 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.04     *
+*............................................................................*
+*Br  259 :HLT_L1SingleEG10 : Bool_t Trigger/flag bit (process: HLT)          *
+*Entries :     5000 : Total  Size=       5791 bytes  File Size  =        510 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.30     *
+*............................................................................*
+*Br  260 :HLT_L1SingleEG15 : Bool_t Trigger/flag bit (process: HLT)          *
+*Entries :     5000 : Total  Size=       5791 bytes  File Size  =        510 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.30     *
+*............................................................................*
+*Br  261 :HLT_L1SingleJet35 : Bool_t Trigger/flag bit (process: HLT)         *
+*Entries :     5000 : Total  Size=       5797 bytes  File Size  =        513 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.25     *
+*............................................................................*
+*Br  262 :HLT_L1SingleJet200 : Bool_t Trigger/flag bit (process: HLT)        *
+*Entries :     5000 : Total  Size=       5803 bytes  File Size  =        516 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.20     *
+*............................................................................*
+*Br  263 :HLT_L2Mu10_NoVertex_NoBPTX : Bool_t Trigger/flag bit (process: HLT)*
+*Entries :     5000 : Total  Size=       5851 bytes  File Size  =        540 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=   9.79     *
+*............................................................................*
+*Br  264 :HLT_L2Mu10_NoVertex_NoBPTX3BX : Bool_t Trigger/flag bit (process:  *
+*         |  HLT)                                                            *
+*Entries :     5000 : Total  Size=       5869 bytes  File Size  =        549 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=   9.64     *
+*............................................................................*
+*Br  265 :HLT_L2Mu45_NoVertex_3Sta_NoBPTX3BX :                               *
+*         | Bool_t Trigger/flag bit (process: HLT)                           *
+*Entries :     5000 : Total  Size=       5899 bytes  File Size  =        564 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=   9.41     *
+*............................................................................*
+*Br  266 :HLT_L2Mu40_NoVertex_3Sta_NoBPTX3BX :                               *
+*         | Bool_t Trigger/flag bit (process: HLT)                           *
+*Entries :     5000 : Total  Size=       5899 bytes  File Size  =        564 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=   9.41     *
+*............................................................................*
+*Br  267 :HLT_L1EXT_HCAL_LaserMon1 : Bool_t Trigger/flag bit (process: HLT)  *
+*Entries :     5000 : Total  Size=       5839 bytes  File Size  =        534 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=   9.89     *
+*............................................................................*
+*Br  268 :HLT_L1EXT_HCAL_LaserMon4 : Bool_t Trigger/flag bit (process: HLT)  *
+*Entries :     5000 : Total  Size=       5839 bytes  File Size  =        534 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=   9.89     *
+*............................................................................*
+*Br  269 :HLT_Physics : Bool_t Trigger/flag bit (process: HLT)               *
+*Entries :     5000 : Total  Size=       5761 bytes  File Size  =        495 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.59     *
+*............................................................................*
+*Br  270 :HLT_Random : Bool_t Trigger/flag bit (process: HLT)                *
+*Entries :     5000 : Total  Size=       5755 bytes  File Size  =        492 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.64     *
+*............................................................................*
+*Br  271 :HLT_EcalCalibration : Bool_t Trigger/flag bit (process: HLT)       *
+*Entries :     5000 : Total  Size=       5809 bytes  File Size  =        519 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.14     *
+*............................................................................*
+*Br  272 :HLT_HcalCalibration : Bool_t Trigger/flag bit (process: HLT)       *
+*Entries :     5000 : Total  Size=       5809 bytes  File Size  =        519 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.14     *
+*............................................................................*
+*Br  273 :HLT_HcalPhiSym : Bool_t Trigger/flag bit (process: HLT)            *
+*Entries :     5000 : Total  Size=       5779 bytes  File Size  =        504 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.41     *
+*............................................................................*
+*Br  274 :HLT_HcalNZS : Bool_t Trigger/flag bit (process: HLT)               *
+*Entries :     5000 : Total  Size=       5761 bytes  File Size  =        495 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.59     *
+*............................................................................*
+*Br  275 :HLT_L1FatEvents : Bool_t Trigger/flag bit (process: HLT)           *
+*Entries :     5000 : Total  Size=       5785 bytes  File Size  =        507 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.36     *
+*............................................................................*
+*Br  276 :HLT_DQML1SeedsGroup1 : Bool_t Trigger/flag bit (process: HLT)      *
+*Entries :     5000 : Total  Size=       5815 bytes  File Size  =        522 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.09     *
+*............................................................................*
+*Br  277 :HLTriggerFinalPath : Bool_t Trigger/flag bit (process: HLT)        *
+*Entries :     5000 : Total  Size=       5803 bytes  File Size  =        516 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.20     *
+*............................................................................*
+*Br  278 :HLT_BptxOR : Bool_t Trigger/flag bit (process: HLT)                *
+*Entries :     5000 : Total  Size=       5755 bytes  File Size  =        492 *
+*Baskets :        3 : Basket Size=       3488 bytes  Compression=  10.64     *
+*............................................................................*
+[0mroot [9] .>
+[0m

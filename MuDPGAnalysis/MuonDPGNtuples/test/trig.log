@@ -1,0 +1,83 @@
+############# GT: 124X_dataRun3_Prompt_v10
+03-May-2024 22:04:19 CEST  Initiating request to open file root://cms-xrd-global.cern.ch//store/data/Run2022G/Muon/RAW-RECO/ZMu-PromptReco-v1/000/362/433/00000/092d015c-b786-4834-a4f5-d10d793432d4.root
+03-May-2024 22:04:26 CEST  Successfully opened file root://cms-xrd-global.cern.ch//store/data/Run2022G/Muon/RAW-RECO/ZMu-PromptReco-v1/000/362/433/00000/092d015c-b786-4834-a4f5-d10d793432d4.root
+Begin processing the 1st record. Run 362433, Event 30826546, LumiSection 39 on stream 0 at 03-May-2024 22:04:40.293 CEST
+################ TriggerNames #########
+
+
+A fatal system signal has occurred: segmentation violation
+The following is the call stack containing the origin of the signal.
+
+Fri May  3 22:04:43 CEST 2024
+Thread 7 (Thread 0x7fde27028700 (LWP 2207104) "cmsRun"):
+#0  0x00007fde5a9d7da6 in do_futex_wait.constprop () from /lib64/libpthread.so.0
+#1  0x00007fde5a9d7e98 in __new_sem_wait_slow.constprop.0 () from /lib64/libpthread.so.0
+#2  0x00007fde556333f6 in XrdCl::JobManager::RunJobs() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdCl.so.3
+#3  0x00007fde556334a9 in RunRunnerThread () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdCl.so.3
+#4  0x00007fde5a9cf1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fde5a63be73 in clone () from /lib64/libc.so.6
+Thread 6 (Thread 0x7fde27829700 (LWP 2207103) "cmsRun"):
+#0  0x00007fde5a9d7da6 in do_futex_wait.constprop () from /lib64/libpthread.so.0
+#1  0x00007fde5a9d7e98 in __new_sem_wait_slow.constprop.0 () from /lib64/libpthread.so.0
+#2  0x00007fde556333f6 in XrdCl::JobManager::RunJobs() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdCl.so.3
+#3  0x00007fde556334a9 in RunRunnerThread () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdCl.so.3
+#4  0x00007fde5a9cf1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fde5a63be73 in clone () from /lib64/libc.so.6
+Thread 5 (Thread 0x7fde2802a700 (LWP 2207102) "cmsRun"):
+#0  0x00007fde5a9d7da6 in do_futex_wait.constprop () from /lib64/libpthread.so.0
+#1  0x00007fde5a9d7e98 in __new_sem_wait_slow.constprop.0 () from /lib64/libpthread.so.0
+#2  0x00007fde556333f6 in XrdCl::JobManager::RunJobs() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdCl.so.3
+#3  0x00007fde556334a9 in RunRunnerThread () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdCl.so.3
+#4  0x00007fde5a9cf1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fde5a63be73 in clone () from /lib64/libc.so.6
+Thread 4 (Thread 0x7fde2882b700 (LWP 2207101) "cmsRun"):
+#0  0x00007fde5a9d9180 in nanosleep () from /lib64/libpthread.so.0
+#1  0x00007fde55720328 in XrdSysTimer::Wait(int) () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdUtils.so.3
+#2  0x00007fde555a0509 in XrdCl::TaskManager::RunTasks() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdCl.so.3
+#3  0x00007fde555a0689 in RunRunnerThread () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdCl.so.3
+#4  0x00007fde5a9cf1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fde5a63be73 in clone () from /lib64/libc.so.6
+Thread 3 (Thread 0x7fde2902c700 (LWP 2207100) "cmsRun"):
+#0  0x00007fde5a731247 in epoll_wait () from /lib64/libc.so.6
+#1  0x00007fde5571a6d2 in XrdSys::IOEvents::PollE::Begin(XrdSysSemaphore*, int&, char const**) () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdUtils.so.3
+#2  0x00007fde55716e7d in XrdSys::IOEvents::BootStrap::Start(void*) () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdUtils.so.3
+#3  0x00007fde5571f9d8 in XrdSysThread_Xeq () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw-patch/CMSSW_13_2_5_patch3/external/el8_amd64_gcc11/lib/libXrdUtils.so.3
+#4  0x00007fde5a9cf1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fde5a63be73 in clone () from /lib64/libc.so.6
+Thread 2 (Thread 0x7fde364f1700 (LWP 2207093) "cmsRun"):
+#0  0x00007fde5a9d9672 in waitpid () from /lib64/libpthread.so.0
+#1  0x00007fde54bc2cf7 in edm::service::cmssw_stacktrace_fork() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/pluginFWCoreServicesPlugins.so
+#2  0x00007fde54bc568a in edm::service::InitRootHandlers::stacktraceHelperThread() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/pluginFWCoreServicesPlugins.so
+#3  0x00007fde5b05c894 in std::execute_native_thread_routine (__p=0x7fde4920f910) at ../../../../../libstdc++-v3/src/c++11/thread.cc:82
+#4  0x00007fde5a9cf1ca in start_thread () from /lib64/libpthread.so.0
+#5  0x00007fde5a63be73 in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7fde59b5e640 (LWP 2207073) "cmsRun"):
+#0  0x00007fde5a726301 in poll () from /lib64/libc.so.6
+#1  0x00007fde54bfdd2f in full_read.constprop () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/pluginFWCoreServicesPlugins.so
+#2  0x00007fde54bc575c in edm::service::InitRootHandlers::stacktraceFromThread() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/pluginFWCoreServicesPlugins.so
+#3  0x00007fde54bc61bb in sig_dostack_then_abort () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/pluginFWCoreServicesPlugins.so
+#4  <signal handler called>
+#5  0x00007fde04f84a91 in HLTPrescaleProvider::prescaleSet(edm::Event const&, edm::EventSetup const&) () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libHLTriggerHLTcore.so
+#6  0x00007fde05130f3a in MuNtupleGEMMuonFiller::fill(edm::Event const&, edm::EventSetup const&) () from /afs/cern.ch/work/s/skeshri/GEM_efficiency/Ntuple/lxplus8/GE21/CMSSW_13_2_5_patch3/lib/el8_amd64_gcc11/libMuDPGAnalysisMuonDPGNtuples.so
+#7  0x00007fde05159933 in MuNtupleProducer::analyze(edm::Event const&, edm::EventSetup const&) () from /afs/cern.ch/work/s/skeshri/GEM_efficiency/Ntuple/lxplus8/GE21/CMSSW_13_2_5_patch3/lib/el8_amd64_gcc11/pluginMuDPGAnalysisMuonDPGNtuplesPlugin.so
+#8  0x00007fde5d122aba in edm::one::EDAnalyzerBase::doEvent(edm::EventTransitionInfo const&, edm::ActivityRegistry*, edm::ModuleCallingContext const*) () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libFWCoreFramework.so
+#9  0x00007fde5d10b8b2 in edm::WorkerT<edm::one::EDAnalyzerBase>::implDo(edm::EventTransitionInfo const&, edm::ModuleCallingContext const*) () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libFWCoreFramework.so
+#10 0x00007fde5d09d5aa in std::__exception_ptr::exception_ptr edm::Worker::runModuleAfterAsyncPrefetch<edm::OccurrenceTraits<edm::EventPrincipal, (edm::BranchActionType)1> >(std::__exception_ptr::exception_ptr, edm::OccurrenceTraits<edm::EventPrincipal, (edm::BranchActionType)1>::TransitionInfoType const&, edm::StreamID, edm::ParentContext const&, edm::OccurrenceTraits<edm::EventPrincipal, (edm::BranchActionType)1>::Context const*) () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libFWCoreFramework.so
+#11 0x00007fde5d0a2c9f in edm::SerialTaskQueue::QueuedTask<edm::SerialTaskQueueChain::push<edm::Worker::RunModuleTask<edm::OccurrenceTraits<edm::EventPrincipal, (edm::BranchActionType)1> >::execute()::{lambda()#1}&>(tbb::detail::d1::task_group&, edm::Worker::RunModuleTask<edm::OccurrenceTraits<edm::EventPrincipal, (edm::BranchActionType)1> >::execute()::{lambda()#1}&)::{lambda()#1}>::execute() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libFWCoreFramework.so
+#12 0x00007fde5d25a099 in tbb::detail::d1::function_task<edm::SerialTaskQueue::spawn(edm::SerialTaskQueue::TaskBase&)::{lambda()#1}>::execute(tbb::detail::d1::execution_data&) () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libFWCoreConcurrency.so
+#13 0x00007fde5b8949cd in tbb::detail::r1::task_dispatcher::local_wait_for_all<false, tbb::detail::r1::external_waiter> (waiter=..., t=0x7fde584dea00, this=0x7fde584d3e00) at /data/cmsbld/jenkins/workspace/auto-builds/CMSSW_13_2_0_pre3-el8_amd64_gcc11/build/CMSSW_13_2_0_pre3-build/BUILD/el8_amd64_gcc11/external/tbb/v2021.8.0-7e31093a7b4a477d01bc3946dd0bf612/tbb-v2021.8.0/src/tbb/task_dispatcher.h:322
+#14 tbb::detail::r1::task_dispatcher::local_wait_for_all<tbb::detail::r1::external_waiter> (waiter=..., t=<optimized out>, this=0x7fde584d3e00) at /data/cmsbld/jenkins/workspace/auto-builds/CMSSW_13_2_0_pre3-el8_amd64_gcc11/build/CMSSW_13_2_0_pre3-build/BUILD/el8_amd64_gcc11/external/tbb/v2021.8.0-7e31093a7b4a477d01bc3946dd0bf612/tbb-v2021.8.0/src/tbb/task_dispatcher.h:458
+#15 tbb::detail::r1::task_dispatcher::execute_and_wait (t=<optimized out>, wait_ctx=..., w_ctx=...) at /data/cmsbld/jenkins/workspace/auto-builds/CMSSW_13_2_0_pre3-el8_amd64_gcc11/build/CMSSW_13_2_0_pre3-build/BUILD/el8_amd64_gcc11/external/tbb/v2021.8.0-7e31093a7b4a477d01bc3946dd0bf612/tbb-v2021.8.0/src/tbb/task_dispatcher.cpp:168
+#16 0x00007fde5d0234ed in edm::FinalWaitingTask::wait() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libFWCoreFramework.so
+#17 0x00007fde5d030fd1 in edm::EventProcessor::processRuns() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libFWCoreFramework.so
+#18 0x00007fde5d031561 in edm::EventProcessor::runToCompletion() () from /cvmfs/cms.cern.ch/el8_amd64_gcc11/cms/cmssw/CMSSW_13_2_5/lib/el8_amd64_gcc11/libFWCoreFramework.so
+#19 0x000000000040c17d in tbb::detail::d1::task_arena_function<main::{lambda()#1}::operator()() const::{lambda()#1}, void>::operator()() const ()
+#20 0x00007fde5b882847 in tbb::detail::r1::task_arena_impl::execute (ta=..., d=...) at /data/cmsbld/jenkins/workspace/auto-builds/CMSSW_13_2_0_pre3-el8_amd64_gcc11/build/CMSSW_13_2_0_pre3-build/BUILD/el8_amd64_gcc11/external/tbb/v2021.8.0-7e31093a7b4a477d01bc3946dd0bf612/tbb-v2021.8.0/src/tbb/arena.cpp:694
+#21 0x00000000004101e0 in main::{lambda()#1}::operator()() const ()
+#22 0x0000000000407d6c in main ()
+
+Current Modules:
+
+Module: MuNtupleProducer:muNtupleProducer (crashed)
+
+A fatal system signal has occurred: segmentation violation
