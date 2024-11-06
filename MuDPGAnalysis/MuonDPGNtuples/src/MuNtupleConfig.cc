@@ -29,13 +29,6 @@
 MuNtupleConfig::MuNtupleConfig(const edm::ParameterSet & config,
 			       edm::ConsumesCollector && collector) 
 { 
-  // Sumit
-  m_parameters = config.getParameter<edm::ParameterSet>("TrackAssociatorParameters");
-//  TrackDetectorAssociator m_trackAssociator_;
-//  TrackAssociatorParameters m_parameters_;
-  m_parameters_.loadParameters(m_parameters, collector);
-//  m_trackAssociator_.useDefaultPropagator();
-  
   m_trackingGeomToken = collector.esConsumes<>();
   m_ttbToken = collector.esConsumes<>(edm::ESInputTag("", "TransientTrackBuilder"));
 
@@ -58,8 +51,7 @@ MuNtupleConfig::MuNtupleConfig(const edm::ParameterSet & config,
   //   m_dtSyncs[PhaseTag::PH2] = DTTTrigSyncFactory::get()->create(config.getUntrackedParameter<std::string>("ph2DTtTrigMode"),
   //   							 config.getUntrackedParameter<edm::ParameterSet>("ph2DTtTrigModeConfig"));
 
-  m_inputTags["trigResultsTag"] = config.getUntrackedParameter<edm::InputTag>("trigResultsTag", none);
-  m_inputTags["trigEventTag"] = config.getUntrackedParameter<edm::InputTag>("trigEventTag", none);
+  m_inputTags["trigTag"] = config.getUntrackedParameter<edm::InputTag>("trigTag",none);
   
   m_inputTags["gemDigiTag"] = config.getUntrackedParameter<edm::InputTag>("gemDigiTag", none);
   
@@ -105,12 +97,6 @@ void MuNtupleConfig::getES(const edm::Run &run, const edm::EventSetup & environm
   m_gemGeometry = environment.getHandle(m_gemGeomToken);
 
   
-
-}
-
-void MuNtupleConfig::getPar(const edm::ParameterSet & config)
-{
-    m_parameters = config;
 
 }
 

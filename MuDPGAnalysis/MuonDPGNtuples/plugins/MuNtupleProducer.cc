@@ -38,7 +38,6 @@
 #include "MuDPGAnalysis/MuonDPGNtuples/src/MuNtupleGEMAMCStatusFiller.h"
 #include "MuDPGAnalysis/MuonDPGNtuples/src/MuNtupleGEMSimHitFiller.h"
 #include "MuDPGAnalysis/MuonDPGNtuples/src/MuNtupleGEMSegmentFiller.h"
-#include "MuDPGAnalysis/MuonDPGNtuples/src/MuNtupleCSCSegmentFiller.h"
 #include "MuDPGAnalysis/MuonDPGNtuples/src/MuNtupleGEMMuonFiller.h"
 
 #include <iostream>
@@ -72,7 +71,6 @@ MuNtupleProducer::MuNtupleProducer(const edm::ParameterSet &config)
   m_fillers.push_back(std::make_unique<MuNtupleGEMRecHitFiller>(consumesCollector(), m_config, m_tree, "gemRecHit"));
 
   m_fillers.push_back(std::make_unique<MuNtupleGEMSegmentFiller>(consumesCollector(), m_config, m_tree, "gemSegment"));
-  m_fillers.push_back(std::make_unique<MuNtupleCSCSegmentFiller>(consumesCollector(), m_config, m_tree, "cscSegment"));
 
   m_fillers.push_back(std::make_unique<MuNtupleGEMMuonFiller>(consumesCollector(), m_config, m_tree, "mu"));
 
@@ -109,7 +107,7 @@ void MuNtupleProducer::analyze(const edm::Event &ev, const edm::EventSetup &envi
 
   for (const auto &filler : m_fillers)
   {
-    filler->fill(ev, environment);
+    filler->fill(ev);
   }
 
   m_tree->Fill();

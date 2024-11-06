@@ -88,7 +88,7 @@ void MuNtupleGEMSegmentFiller::clear()
   
 }
 
-void MuNtupleGEMSegmentFiller::fill(const edm::Event &ev, const edm::EventSetup &iSetup)
+void MuNtupleGEMSegmentFiller::fill(const edm::Event & ev)
 {
 
   clear();

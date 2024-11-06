@@ -5,6 +5,8 @@
 
 #include "FWCore/Framework/interface/one/EDAnalyzer.h"
 #include "FWCore/Framework/interface/ESHandle.h"
+#include "HLTrigger/HLTcore/interface/HLTConfigProvider.h"
+#include "TString.h"
 
 MuNtupleEventFiller::MuNtupleEventFiller(edm::ConsumesCollector && collector,
 					 const std::shared_ptr<MuNtupleConfig> config, 
@@ -17,6 +19,8 @@ MuNtupleEventFiller::MuNtupleEventFiller(edm::ConsumesCollector && collector,
   edm::InputTag & primaryVerticesTag = m_config->m_inputTags["primaryVerticesTag"];
   if (primaryVerticesTag.label() != "none") m_primaryVerticesToken = collector.consumes<std::vector<reco::Vertex>>(primaryVerticesTag);
 
+  edm::InputTag & trigTag = m_config->m_inputTags["trigTag"];
+  if (trigTag.label() != "none") m_trigToken = collector.consumes<edm::TriggerResults>(trigTag);
 }
 
 
@@ -38,6 +42,13 @@ void MuNtupleEventFiller::initialize()
   m_tree->Branch((m_label + "_2ndLast_L1A").c_str(), &m_L1A_2_Diff, (m_label + "_2ndLast_L1A/I").c_str());
   m_tree->Branch((m_label + "_3rdLast_L1A").c_str(), &m_L1A_3_Diff, (m_label + "_3rdLast_L1A/I").c_str());
   m_tree->Branch((m_label + "_4thLast_L1A").c_str(), &m_L1A_4_Diff, (m_label + "_4thLast_L1A/I").c_str());
+  m_tree->Branch((m_label + "_trigName").c_str(), &m_trigName);
+  m_tree->Branch((m_label + "_trigDecision").c_str(), &m_trigDecision);
+  m_tree->Branch((m_label + "_trigPS").c_str(), &m_trigPS);
+  //m_tree->Branch((m_label + "_trigMap").c_str(), &m_trigMap, (m_label + "_trigMap").c_str());
+  //m_tree->Branch((m_label + "_trigName").c_str(), &m_trigName);
+  //m_tree->Branch((m_label + "_trigDecision").c_str(), &m_trigDecision);
+  //m_tree->Branch((m_label + "_trigMap").c_str(), &m_trigMap);
       
 }
 
@@ -54,10 +65,14 @@ void MuNtupleEventFiller::clear()
   m_L1A_2_Diff = MuNtupleBaseFiller::DEFAULT_INT_VAL_POS;
   m_L1A_3_Diff = MuNtupleBaseFiller::DEFAULT_INT_VAL_POS;
   m_L1A_4_Diff = MuNtupleBaseFiller::DEFAULT_INT_VAL_POS;
+    //m_trigMap.clear();
+  m_trigName.clear();
+  m_trigDecision.clear();
+  m_trigPS.clear();
     
 }
 
-void MuNtupleEventFiller::fill(const edm::Event &ev, const edm::EventSetup & iSetup)
+void MuNtupleEventFiller::fill(const edm::Event & ev)
 {
 
   clear();
@@ -65,6 +80,9 @@ void MuNtupleEventFiller::fill(const edm::Event &ev, const edm::EventSetup & iSe
 
   auto tcdsData = conditionalGet<TCDSRecord>(ev, m_TCDStoken, "tcdsRecord");
   auto vtxs = conditionalGet<std::vector<reco::Vertex>>(ev, m_primaryVerticesToken, "std::vector<reco::Vertex>");
+
+  auto triggerResults = conditionalGet<edm::TriggerResults>(ev, m_trigToken,"edm::TriggerResults"); 
+
 
   m_runNumber   = ev.run();
   m_lumiBlock   = ev.getLuminosityBlock().luminosityBlock();
@@ -86,6 +104,34 @@ void MuNtupleEventFiller::fill(const edm::Event &ev, const edm::EventSetup & iSe
       m_nVtx = vtxs->size();
   
   }
+
+
+    
+  const edm::TriggerNames &names = ev.triggerNames(*triggerResults);
+    for (size_t j=0; j < triggerResults->size(); j++) {
+        
+        std::string trig_ = names.triggerName(j);
+        TString T_trig_(trig_);
+        if(! (T_trig_.Contains("HLT_Mu") or (T_trig_.Contains("HLT_IsoMu"))) ) continue;
+       if (triggerResults->accept(j)) {
+        //std::cout<<trig_<<"\n";
+        float ps_value=1.0;
+        const unsigned int prescaleSize = hltConfig_.prescaleSize();
+        for (unsigned int ps = 0; ps < prescaleSize; ps++) {
+            auto const prescaleValue = hltConfig_.prescaleValue<double>(ps, trig_);
+            if (prescaleValue != 1) {
+                ps_value = prescaleValue;
+            }
+        }
+
+        //std::cout<<trig_<<"\t"<<ps_value<<"\t"<<std::endl;
+            m_trigName.push_back(trig_);
+            m_trigPS.push_back(ps_value);
+            m_trigDecision.push_back(1);
+       }
+     }
+
+
   return;
 
 }

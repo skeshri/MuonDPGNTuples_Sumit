@@ -30,8 +30,6 @@
 #include "DataFormats/Common/interface/TriggerResults.h"
 #include "DataFormats/HLTReco/interface/TriggerEvent.h"
 #include "DataFormats/HLTReco/interface/TriggerObject.h"
-#include "FWCore/Common/interface/TriggerNames.h"
-#include "TrackingTools/TrackAssociator/interface/TrackDetMatchInfo.h"
 
 #include <iostream>
 #include <fstream>
@@ -59,14 +57,17 @@ MuNtupleBaseFiller(config, tree, label), m_nullVecF()
   edm::InputTag & cscSegmentTag = m_config->m_inputTags["cscSegmentTag"];
   if(cscSegmentTag.label() != "none") m_cscSegmentToken = collector.consumes<CSCSegmentCollection>(cscSegmentTag);
 
-  edm::InputTag & trigResultsTag = m_config->m_inputTags["trigResultsTag"];
-  if (trigResultsTag.label() != "none") m_trigResultsToken = collector.consumes<edm::TriggerResults>(trigResultsTag);
+//  edm::InputTag & trigResultsTag = m_config->m_inputTags["trigResultsTag"];
+//  if (trigResultsTag.label() != "none") m_trigResultsToken = collector.consumes<edm::TriggerResults>(trigResultsTag);
 
-  edm::InputTag & trigEventTag = m_config->m_inputTags["trigEventTag"];
-  if (trigEventTag.label() != "none") m_trigEventToken = collector.consumes<trigger::TriggerEvent>(trigEventTag);
+//  edm::InputTag & trigEventTag = m_config->m_inputTags["trigEventTag"];
+//  if (trigEventTag.label() != "none") m_trigEventToken = collector.consumes<trigger::TriggerEvent>(trigEventTag);
 
   edm::InputTag & gemRecHitTag = m_config->m_inputTags["gemRecHitTag"];
   if (gemRecHitTag.label() != "none") m_gemRecHitToken = collector.consumes<GEMRecHitCollection>(gemRecHitTag);
+ 
+//  edm::InputTag & trigTag = m_config->m_inputTags["trigTag"];
+//  if (trigTag.label() != "none") m_trigToken = collector.consumes<edm::TriggerResults>(trigTag);
 
 }
 
@@ -96,6 +97,22 @@ void MuNtupleGEMMuonFiller::initialize()
   m_tree->Branch((m_label + "_isLoose").c_str(), &m_isLoose);
   m_tree->Branch((m_label + "_isMedium").c_str(), &m_isMedium);
   m_tree->Branch((m_label + "_isTight").c_str(), &m_isTight);
+  
+  m_tree->Branch((m_label + "_isPFMuon").c_str(), &m_isPFMuon);
+  m_tree->Branch((m_label + "_validFraction").c_str(), &m_validFraction);
+  m_tree->Branch((m_label + "_normChi2").c_str(), &m_normChi2);
+  m_tree->Branch((m_label + "_chi2LocalPosition").c_str(), &m_chi2LocalPosition);
+  m_tree->Branch((m_label + "_trkKink").c_str(), &m_trkKink);
+  m_tree->Branch((m_label + "_segCompatibility").c_str(), &m_segCompatibility);
+  m_tree->Branch((m_label + "_numValidMuonHits").c_str(), &m_numValidMuonHits);
+  m_tree->Branch((m_label + "_numMatchedStation").c_str(), &m_numMatchedStation);
+  m_tree->Branch((m_label + "_dxy").c_str(), &m_dxy);
+  m_tree->Branch((m_label + "_dz").c_str(), &m_dz);
+  m_tree->Branch((m_label + "_numValidPixelHits").c_str(), &m_numValidPixelHits);
+  m_tree->Branch((m_label + "_numTrackerLayers").c_str(), &m_numTrackerLayers);
+  
+  m_tree->Branch((m_label + "_GlobalTrackHits").c_str(), &m_GlobalTrackHits);
+  m_tree->Branch((m_label + "_OuterTrackHits").c_str(), &m_OuterTrackHits);
 
   m_tree->Branch((m_label + "_propagated_isME11").c_str(), &m_propagated_isME11);
   m_tree->Branch((m_label + "_propagated_isME21").c_str(), &m_propagated_isME21);
@@ -118,9 +135,15 @@ void MuNtupleGEMMuonFiller::initialize()
   m_tree->Branch((m_label + "_propagated_etaP").c_str(), &m_propagated_etaP);
 
   m_tree->Branch((m_label + "_propagated_pt").c_str(), &m_propagated_pt);
+  m_tree->Branch((m_label + "_propagated_isLoose").c_str(), &m_propagated_isLoose);
+  m_tree->Branch((m_label + "_propagated_isMedium").c_str(), &m_propagated_isMedium);
+  m_tree->Branch((m_label + "_propagated_isTight").c_str(), &m_propagated_isTight);
   m_tree->Branch((m_label + "_propagated_phi").c_str(), &m_propagated_phi);
   m_tree->Branch((m_label + "_propagated_eta").c_str(), &m_propagated_eta);
   m_tree->Branch((m_label + "_propagated_charge").c_str(), &m_propagated_charge);
+  m_tree->Branch((m_label + "_propagated_isGlobal").c_str(), &m_propagated_isGlobal);
+  m_tree->Branch((m_label + "_propagated_isStandalone").c_str(), &m_propagated_isStandalone);
+  m_tree->Branch((m_label + "_propagated_isTracker").c_str(), &m_propagated_isTracker);
 
   m_tree->Branch((m_label + "_propagatedLoc_x").c_str(), &m_propagatedLoc_x);
   m_tree->Branch((m_label + "_propagatedLoc_y").c_str(), &m_propagatedLoc_y);
@@ -134,6 +157,18 @@ void MuNtupleGEMMuonFiller::initialize()
   m_tree->Branch((m_label + "_propagatedLoc_dirY").c_str(), &m_propagatedLoc_dirY);
   m_tree->Branch((m_label + "_propagatedLoc_dirZ").c_str(), &m_propagatedLoc_dirZ);
 
+  m_tree->Branch((m_label + "_propagated_isPFMuon").c_str(), &m_propagated_isPFMuon);
+  m_tree->Branch((m_label + "_propagated_validFraction").c_str(), &m_propagated_validFraction);
+  m_tree->Branch((m_label + "_propagated_normChi2").c_str(), &m_propagated_normChi2);
+  m_tree->Branch((m_label + "_propagated_chi2LocalPosition").c_str(), &m_propagated_chi2LocalPosition);
+  m_tree->Branch((m_label + "_propagated_trkKink").c_str(), &m_propagated_trkKink);
+  m_tree->Branch((m_label + "_propagated_segCompatibility").c_str(), &m_propagated_segCompatibility);
+  m_tree->Branch((m_label + "_propagated_numValidMuonHits").c_str(), &m_propagated_numValidMuonHits);
+  m_tree->Branch((m_label + "_propagated_numMatchedStation").c_str(), &m_propagated_numMatchedStation);
+  m_tree->Branch((m_label + "_propagated_dxy").c_str(), &m_propagated_dxy);
+  m_tree->Branch((m_label + "_propagated_dz").c_str(), &m_propagated_dz);
+  m_tree->Branch((m_label + "_propagated_numValidPixelHits").c_str(), &m_propagated_numValidPixelHits);
+  m_tree->Branch((m_label + "_propagated_numTrackerLayers").c_str(), &m_propagated_numTrackerLayers);
 
   m_tree->Branch((m_label + "_propagatedGlb_x").c_str(), &m_propagatedGlb_x);
   m_tree->Branch((m_label + "_propagatedGlb_y").c_str(), &m_propagatedGlb_y);
@@ -151,6 +186,11 @@ void MuNtupleGEMMuonFiller::initialize()
   m_tree->Branch((m_label + "_propagated_EtaPartition_rMin").c_str(), &m_propagated_EtaPartition_rMin);
   m_tree->Branch((m_label + "_propagated_EtaPartition_phiMax").c_str(), &m_propagated_EtaPartition_phiMax);
   m_tree->Branch((m_label + "_propagated_EtaPartition_phiMin").c_str(), &m_propagated_EtaPartition_phiMin);
+  
+  m_tree->Branch((m_label + "_propagated_EtaPartition_xMax").c_str(), &m_propagated_EtaPartition_xMax);
+  m_tree->Branch((m_label + "_propagated_EtaPartition_xMin").c_str(), &m_propagated_EtaPartition_xMin);
+  m_tree->Branch((m_label + "_propagated_EtaPartition_yMax").c_str(), &m_propagated_EtaPartition_yMax);
+  m_tree->Branch((m_label + "_propagated_EtaPartition_yMin").c_str(), &m_propagated_EtaPartition_yMin);
 
   m_tree->Branch((m_label + "_propagated_nME1hits").c_str(), &m_propagated_nME1hits);
   m_tree->Branch((m_label + "_propagated_nME2hits").c_str(), &m_propagated_nME2hits);
@@ -166,6 +206,7 @@ void MuNtupleGEMMuonFiller::initialize()
   m_tree->Branch((m_label + "_propagated_Outermost_y").c_str(), &m_propagated_Outermost_y);
   m_tree->Branch((m_label + "_propagated_Outermost_z").c_str(), &m_propagated_Outermost_z);
 
+//  m_tree->Branch((m_label + "_triggerMap").c_str(), &m_triggerMap, (m_label + "_triggerMap").c_str());  
 
 }
 
@@ -187,6 +228,9 @@ void MuNtupleGEMMuonFiller::clear()
   m_isME11.clear();
   m_isME21.clear();
 
+m_GlobalTrackHits.clear();
+m_OuterTrackHits.clear();
+
   m_propagated_TrackNormChi2.clear();
 
   m_propagated_numberOfValidPixelHits.clear();
@@ -197,6 +241,20 @@ void MuNtupleGEMMuonFiller::clear()
   m_isMedium.clear();
   m_isTight.clear();
 
+  m_isPFMuon.clear();
+  m_validFraction.clear();
+  m_normChi2.clear();
+  m_chi2LocalPosition.clear();
+  m_trkKink.clear();
+  m_segCompatibility.clear();
+  m_numValidMuonHits.clear();
+  m_numMatchedStation.clear();
+  m_dxy.clear();
+  m_dz.clear();
+  m_numValidPixelHits.clear();
+  m_numTrackerLayers.clear();
+
+ 
   m_path_length = 0;
   
   m_isinsideout.clear();
@@ -210,10 +268,30 @@ void MuNtupleGEMMuonFiller::clear()
   m_propagated_isME11.clear();
   m_propagated_isME21.clear();
   
+  m_propagated_isLoose.clear();
+  m_propagated_isMedium.clear();
+  m_propagated_isTight.clear();
   m_propagated_pt.clear();
   m_propagated_phi.clear();
   m_propagated_eta.clear();
   m_propagated_charge.clear();
+  m_propagated_isGlobal.clear();
+  m_propagated_isStandalone.clear();
+  m_propagated_isTracker.clear();
+
+
+  m_propagated_isPFMuon.clear();
+  m_propagated_validFraction.clear();
+  m_propagated_normChi2.clear();
+  m_propagated_chi2LocalPosition.clear();
+  m_propagated_trkKink.clear();
+  m_propagated_segCompatibility.clear();
+  m_propagated_numValidMuonHits.clear();
+  m_propagated_numMatchedStation.clear();
+  m_propagated_dxy.clear();
+  m_propagated_dz.clear();
+  m_propagated_numValidPixelHits.clear();
+  m_propagated_numTrackerLayers.clear();
 
   m_propagatedLoc_x.clear();
   m_propagatedLoc_y.clear();
@@ -257,10 +335,17 @@ void MuNtupleGEMMuonFiller::clear()
   m_propagated_EtaPartition_rMin.clear();
   m_propagated_EtaPartition_phiMax.clear();
   m_propagated_EtaPartition_phiMin.clear();
+  
+  m_propagated_EtaPartition_xMax.clear();
+  m_propagated_EtaPartition_xMin.clear();
+  m_propagated_EtaPartition_yMax.clear();
+  m_propagated_EtaPartition_yMin.clear();
+
+//  m_triggerMap.clear();
       
 }
 
-void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& iSetup)
+void MuNtupleGEMMuonFiller::fill(const edm::Event & ev)
 {
 
   clear();
@@ -269,6 +354,9 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
   auto gem_segments = conditionalGet<GEMSegmentCollection>(ev,m_gemSegmentToken, "GEMSegmentCollection");
   auto csc_segments = conditionalGet<CSCSegmentCollection>(ev,m_cscSegmentToken, "CSCSegmentCollection" );
   auto vtxs = conditionalGet<std::vector<reco::Vertex>>(ev, m_primaryVerticesToken, "std::vector<reco::Vertex>");
+
+  //if (vtxs->empty()) return; // skip the event if no PV found
+  //const reco::Vertex &pv = vtxs->front();
 
   bool isCSC = false;
   bool isME11 = false;
@@ -314,42 +402,30 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
     std::cout << "TransientTrack is invalid" << std::endl;
     return;
   }
-  // Get Triggers
-  edm::Handle<edm::TriggerResults> triggerResults;
-  ev.getByToken(m_trigResultsToken, triggerResults);
+
+/*  auto triggerResults = conditionalGet<edm::TriggerResults>(ev, m_trigToken,"edm::TriggerResults");
+
   const edm::TriggerNames &names = ev.triggerNames(*triggerResults);
-
-  std::cout<<"################ TriggerNames #########"<<std::endl;
-  for (unsigned int j=0; j < triggerResults->size(); j++)
-  {
-      if(triggerResults->accept(j))
-      {
-          //std::cout<<"hltConfig_.prescaleSize(): "<<hltConfig_.prescaleSize()<<std::endl;
-          int ps = hltConfig_.prescaleSize();
-          auto const prescaleValue = hltConfig_.prescaleValue<double>(ps, names.triggerName(j));
-          //std::cout<<"prescaleSet: "<<ps<<" ,prescaleValue: "<<prescaleValue<<std::endl;
-          //auto const prescale = hltConfig_->prescaleValue<double>(ev, iSetup, names.triggerName(j));
-          std::cout<<names.triggerName(j)<<","<<prescaleValue<<std::endl;
-          
-      }
-
-  }
-
-  std::cout<<"#######################################"<<std::endl;
-  TrackDetectorAssociator trackAssociator_;
-  //TrackAssociatorParameters parameters_;
-  
-  //edm::ParameterSet parameters_t = m_config->m_parameters.getParameter<edm::ParameterSet>("TrackAssociatorParameters");
-  //edm::ConsumesCollector iC;// = consumesCollector();
-  //parameters_.loadParameters(parameters_t, iC);
-
-  trackAssociator_.useDefaultPropagator();
+    size_t j;
+    for (j=0; j < triggerResults->size(); j++) {
+       if (triggerResults->accept(j)) {
+           m_triggerMap[names.triggerName(j)] = 1;
+       }
+       else
+       {
+           m_triggerMap[names.triggerName(j)] = 0;
+       }
+     }
+*/
 
   if (muons.isValid()) // && csc_segments.isValid() && vtxs.isValid()) 
     {
       //loop on recoMuons  
       for (const auto & muon : (*muons))
 	{
+
+          //if (!(muon.passed(reco::Muon::CutBasedIdTight) && muon.isGlobalMuon()))
+          //{ continue;}
 
 	  m_pt.push_back(muon.pt());
 	  m_eta.push_back(muon.eta());
@@ -364,13 +440,45 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
 	  m_isLoose.push_back(muon.passed(reco::Muon::CutBasedIdLoose));
 	  m_isMedium.push_back(muon.passed(reco::Muon::CutBasedIdMedium));
 	  m_isTight.push_back(muon.passed(reco::Muon::CutBasedIdTight));
+    
+          // Adding ID variables Sumit
+	  m_isPFMuon.push_back(muon.isPFMuon());
+          bool validFractionThreshold=((272728 >= ev.run() && ev.run() >= 278808)? 0.49 : 0.8);
+          m_validFraction.push_back(int(validFractionThreshold));
+          
+          if(!muon.globalTrack().isNull()){
+          m_normChi2.push_back(muon.globalTrack()->normalizedChi2());
+          m_numValidMuonHits.push_back(muon.globalTrack()->hitPattern().numberOfValidMuonHits());
+          }
+          m_chi2LocalPosition.push_back(muon.combinedQuality().chi2LocalPosition);
+          m_trkKink.push_back(muon.combinedQuality().trkKink);
+          m_segCompatibility.push_back(muon::segmentCompatibility(muon));
+          m_numMatchedStation.push_back(muon.numberOfMatchedStations());
+          if (! vtxs->empty())
+          {
+          const reco::Vertex &pv = vtxs->front();
+          m_dxy.push_back(fabs(muon.muonBestTrack()->dxy(pv.position())));
+          m_dz.push_back(fabs(muon.muonBestTrack()->dz(pv.position())));
+          }
+          if (!muon.innerTrack().isNull()){
+          m_numValidPixelHits.push_back(muon.innerTrack()->hitPattern().numberOfValidPixelHits());
+          m_numTrackerLayers.push_back(muon.innerTrack()->hitPattern().trackerLayersWithMeasurement());
+          }
 
 	  m_nMuons++;
-
-
+      
       isCSC = false;
       isME11 = false;
       isME21 = false;
+
+          if (muon.isGlobalMuon()){
+              m_GlobalTrackHits.push_back(muon.globalTrack().get()->recHitsSize());
+              //m_GlobalTrackCSCSegments.push_back(muon.num)
+          }
+
+          //if (muon.isStandAloneMuon()) m_OuterTrackHits.push_back(muon.outerTrack().get()->recHitsSize());
+
+          if (!(muon.isGlobalMuon() and muon.isStandAloneMuon() and muon.passed(reco::Muon::CutBasedIdTight))) continue;
 
 	  //if(!muon.globalTrack().isNull())  //GLB muon
 	  //if(!muon.innerTrack().isNull() && muon.innerTrack().isAvailable())   //tracker muon	  
@@ -379,7 +487,7 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
 	    {
 	      
 
-	      //const reco::Track* track = muon.globalTrack().get();   //GLB muon
+	  //    const reco::Track* track = muon.globalTrack().get();   //GLB muon
           //const reco::Track* track = muon.innerTrack().get();    //tracker muon
           const reco::Track* track = muon.outerTrack().get();    //STA muon
 	      
@@ -390,21 +498,13 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
 
 	      //const reco::TrackRef trackRef = muon.globalTrack();       //GLB muon              
 	      //const reco::TrackRef innerTrackRef = muon.innerTrack();   //tracker muon
-	      const reco::TrackRef outerTrackRef = muon.outerTrack();   //STA muon  
-              TrackDetMatchInfo info;
-              //TrackAssociatorParameters param_m = m_config->m_parameters_;
-              info = trackAssociator_.associate(ev, iSetup, *track, m_config->m_parameters_);    	   
-     if (m_config->m_parameters_.useMuon) {
-         //std::cout << "Muon detector matching details: ";
-       for (std::vector<TAMuonChamberMatch>::const_iterator chamber = info.chambers.begin();
-            chamber != info.chambers.end();
-            chamber++) {
-           if(chamber->info() == "GEM chamber"){
-           std::cout << chamber->info() << "\n\t(DetId, station, edgeX, edgeY): " << chamber->id.rawId() << ", "<< chamber->station() << ", " << chamber->localDistanceX << ", " << chamber->localDistanceY <<std::endl;   
-       }
-       }
-     }       
+	      const reco::TrackRef outerTrackRef = muon.outerTrack();   //STA muon 
+              //if(innerTrackRef.isNull()){
+              //    std::cout<<"failed to get inner muon track reference."<<std::endl;
+              //   continue;
+              //} 
 
+	    
 
 	      float p2_in = track->innerMomentum().mag2();
 	      float p2_out = track->outerMomentum().mag2();
@@ -433,10 +533,11 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
 	      auto& propagator = is_incoming ? propagator_along : propagator_opposite;
 	     
 	      //auto recHitMu = trackRef->recHitsBegin();           //GLB muon
+	      //auto recHitMuEnd = trackRef->recHitsEnd();           //GLB muon
 	      //auto recHitMu = innerTrackRef->recHitsBegin();      //tracker muon
 	      auto recHitMuEnd = outerTrackRef ->recHitsEnd();      //STA muon
 
-	      //auto recHitMuEnd = innerTrackRef->recHitsEnd();     //tracker muon
+	     // auto recHitMuEnd = innerTrackRef->recHitsEnd();     //tracker muon
 	      auto recHitMu = outerTrackRef->recHitsBegin();      //STA muon
 	      // auto recHitMuEnd = innerTrackerRef->recHitsEnd();     //STA muon
 
@@ -513,33 +614,7 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
                               
                           }
                   }
-
-// Sumit
-//      
-           
-
-
-// Added by Sumit for extracting csc-segment information
-
-     for (const reco::MuonChamberMatch& chamber_match : muon.matches()) {
-       if (chamber_match.detector() == MuonSubdetId::CSC) {
-           const CSCDetId csc_id1{chamber_match.id};
-           if (csc_id1.isME21()) {
-               for (const reco::MuonSegmentMatch& segment_match : chamber_match.segmentMatches) {
-                   if (segment_match.isMask(reco::MuonSegmentMatch::BestInStationByDR)) {
-                       const CSCSegment *csc_seg_ref = segment_match.cscSegmentRef.get();
-                       //std::cout<<"Hey my name is sumit.."<<std::endl;
-                       //LocalPoint l_p = csc_seg_ref->localPosition();
-                       //std::cout<<"X-position of CSC segment: "<<l_p.x()<<std::endl;
-                       //std::cout<<"Y-position of CSC segment: "<<l_p.y()<<std::endl;
-                       //std::cout<<"Z-position of CSC segment: "<<l_p.z()<<std::endl;
-                       
-                   }
-               }
-           }
-       }  // MuonSegmentMatch
-     } // MuonChamberMatch
-
+                      
 
                   for (const GEMRegion* gem_region : gem->regions())
                       {
@@ -552,17 +627,12 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
                                       {
                                           for (const GEMChamber* chamber : super_chamber->chambers())
                                               {
-                                                  //std::cout<<"GEM Chmaber ID: "<<chamber->id().rawId()<<std::endl;
                                                   for (const GEMEtaPartition* eta_partition : chamber->etaPartitions())
                                                       {
                                                           const BoundPlane& bound_plane = eta_partition->surface();
-                                                          //const TrapezoidalPlaneBounds *boundsss = dynamic_cast<const TrapezoidalPlaneBounds*>(& eta_partition);
-
-                                                          //std::cout<<"EtaPartion ID: "<<eta_partition->id().rawId()<<std::endl;
 
                                                           // PROPAGATION ON ETAP SURFACE
                                                           // The Z of the dest_state is fixed one the boundplane. x,y are actually evaluated by the propagator at that Z
-                                                          //const auto& dest_state = propagator_any->propagate(start_state,bound_plane);
                                                           const auto& dest_state = propagator_any->propagate(start_state,bound_plane);
                                                           //END PROPAGATION ON ETAP SURFACE
 
@@ -593,7 +663,7 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
                                                                   std::cout << "failed to propagate" << std::endl;
                                                                   continue;
                                                               }
-
+                                                        //std::cout<<"(x,y): ("<<cartesian.x()<<","<<cartesian.y()<<")"<<std::endl;
 
                                                           const GlobalPoint&& dest_global_pos = dest_state.globalPosition();
                                                           const LocalPoint&& local_point = eta_partition->toLocal(dest_global_pos);
@@ -603,6 +673,8 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
                                                               {
 
                                                                   const GEMDetId&& gem_id = eta_partition->id();
+                                                                  Geom::Polar2Cartesian<float> cartesian_min(bound_plane.rSpan().first,bound_plane.phiSpan().first);
+                                                                  Geom::Polar2Cartesian<float> cartesian_max(bound_plane.rSpan().second,bound_plane.phiSpan().second);
 
                                                                   //// PROPAGATED HIT ERROR EVALUATION
                                                                   // X,Y FROM QC8 Code
@@ -640,6 +712,11 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
                                                                   m_propagated_EtaPartition_phiMin.push_back(eta_partition->surface().phiSpan().first);
                                                                   m_propagated_EtaPartition_phiMax.push_back(eta_partition->surface().phiSpan().second);
                                                                   
+                                                                  m_propagated_EtaPartition_xMin.push_back(cartesian_min.x());
+                                                                  m_propagated_EtaPartition_xMax.push_back(cartesian_max.x());
+                                                                  m_propagated_EtaPartition_yMin.push_back(cartesian_min.y());
+                                                                  m_propagated_EtaPartition_yMax.push_back(cartesian_max.y());
+                                                                  
                                                                   m_propagatedGlb_x.push_back(dest_global_pos.x());
                                                                   m_propagatedGlb_y.push_back(dest_global_pos.y());
                                                                   m_propagatedGlb_z.push_back(dest_global_pos.z());
@@ -647,6 +724,31 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
                                                                   m_propagatedGlb_phi.push_back(dest_global_pos.phi());
                                                                   
                                                                   m_propagated_pt.push_back(muon.pt());
+                                                                  m_propagated_isLoose.push_back(muon.passed(reco::Muon::CutBasedIdLoose));
+                                                                  m_propagated_isMedium.push_back(muon.passed(reco::Muon::CutBasedIdMedium));
+                                                                  m_propagated_isTight.push_back(muon.passed(reco::Muon::CutBasedIdTight));
+	                                                          m_propagated_isGlobal.push_back(muon.isGlobalMuon());
+	                                                          m_propagated_isStandalone.push_back(muon.isStandAloneMuon());
+	                                                          m_propagated_isTracker.push_back(muon.isTrackerMuon());
+	                                                          m_propagated_isPFMuon.push_back(muon.isPFMuon());
+	                                                          m_propagated_validFraction.push_back(int(validFractionThreshold));
+	                                                          if (!muon.globalTrack().isNull()){
+                                                                      m_propagated_normChi2.push_back(muon.globalTrack()->normalizedChi2());
+                                                                      m_propagated_numValidMuonHits.push_back(muon.globalTrack()->hitPattern().numberOfValidMuonHits());
+                                                                      }
+	                                                          m_propagated_chi2LocalPosition.push_back(muon.combinedQuality().chi2LocalPosition);
+	                                                          m_propagated_trkKink.push_back(muon.combinedQuality().trkKink);
+                                                                  
+	                                                          m_propagated_segCompatibility.push_back(muon::segmentCompatibility(muon));
+	                                                          m_propagated_numMatchedStation.push_back(muon.numberOfMatchedStations());
+                                                                  if(!vtxs->empty())
+                                                                  {
+                                                                      const reco::Vertex &pv = vtxs->front();
+	                                                          m_propagated_dxy.push_back(fabs(muon.muonBestTrack()->dxy(pv.position())));
+	                                                          m_propagated_dz.push_back(fabs(muon.muonBestTrack()->dz(pv.position())));
+                                                                  }
+                                                                  
+                                                                  
                                                                   m_propagated_phi.push_back(muon.phi());
                                                                   m_propagated_eta.push_back(muon.eta());
                                                                   m_propagated_charge.push_back(muon.charge());
@@ -682,6 +784,7 @@ void MuNtupleGEMMuonFiller::fill(const edm::Event & ev, const edm::EventSetup& i
                                                                       {
                                                                           m_propagated_numberOfValidPixelHits.push_back(muon.innerTrack()->hitPattern().numberOfValidPixelHits());
                                                                           m_propagated_innerTracker_ValidFraction.push_back(muon.innerTrack()->validFraction());
+                                                                          m_propagated_numTrackerLayers.push_back(muon.innerTrack()->hitPattern().trackerLayersWithMeasurement());
                                                                           m_propagated_numberOfValidTrackerHits.push_back(muon.innerTrack()->hitPattern().numberOfValidTrackerHits());
                                                                       }
 
@@ -713,24 +816,4 @@ const GEMEtaPartition* MuNtupleGEMMuonFiller::findEtaPartition(const GEMChamber*
 
   return nullptr;
 }
-
-/*void MuNtupleGEMMuonFiller::beginRun(const edm::Run &run, const edm::EventSetup &environment)
-{
-
-    bool changed(true);
-  if (hltConfig_->init(run, environment, "HLT", changed)) {
-    // if init returns TRUE, initialisation has succeeded!
-    if (changed) {
-      // The HLT config has actually changed wrt the previous Run, hence rebook your
-      // histograms or do anything else dependent on the revised HLT config
-      std::cout << "Initalizing HLTConfigProvider" << std::endl;
-    }
-  } else {
-    // if init returns FALSE, initialisation has NOT succeeded, which indicates a problem
-    // with the file and/or code and needs to be investigated!
-    std::cout << " HLT config extraction failure with process name " << "HLT" << std::endl;
-    // In this case, all access methods will return empty values!
-  }
-}*/
-
 

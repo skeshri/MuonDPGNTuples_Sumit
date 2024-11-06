@@ -28,11 +28,6 @@
 
 #include "RecoMuon/TrackingTools/interface/MuonServiceProxy.h"
 
-
-// Sumit
-#include "TrackingTools/TrackAssociator/interface/TrackDetectorAssociator.h"
-#include "TrackingTools/TrackAssociator/interface/TrackAssociatorParameters.h"
-
 #include <map>
 #include <string>
 #include <memory>
@@ -62,8 +57,6 @@ class MuNtupleConfig
   void getES(const edm::Run &run, 
 	     const edm::EventSetup & environment);
 
-
-  void getPar(const edm::ParameterSet & config);
 
   edm::EventSetup passES();
 
@@ -99,10 +92,6 @@ class MuNtupleConfig
   //MuonServiceProxy *muon_service;
   std::unique_ptr<MuonServiceProxy> m_muonSP;
 
-    edm::ParameterSet m_parameters;
-//    edm::ConsumesCollector m_collector;
- // TrackDetectorAssociator m_trackAssociator_;
-  TrackAssociatorParameters m_parameters_;
 
 };
 

@@ -30,7 +30,7 @@ class MuNtupleGEMRecHitFiller : public MuNtupleBaseFiller
   
   virtual void clear() final;
 
-  virtual void fill(const edm::Event &ev, const edm::EventSetup &iSetup) final;
+  virtual void fill(const edm::Event & ev) final;
 
  
  private:

@@ -153,15 +153,40 @@ process.load("TrackingTools/TransientTrack/TransientTrackBuilder_cfi")
 process.load('TrackPropagation.SteppingHelixPropagator.SteppingHelixPropagatorAny_cfi')
 process.load('TrackPropagation.SteppingHelixPropagator.SteppingHelixPropagatorAlong_cfi')
 process.load('TrackPropagation.SteppingHelixPropagator.SteppingHelixPropagatorOpposite_cfi')
-
-
-
+process.load('RecoMuon.StandAloneMuonProducer.standAloneMuons_cfi')
+process.load('RecoMuon.Configuration.RecoMuonPPonly_cff')
 process.load('Configuration.StandardSequences.RawToDigi_Data_cff')
+process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
 
+process.load("RecoMuon.GlobalMuonProducer.globalMuons_cfi")
 # add TrackDetectorAssociator lookup maps to the EventSetup
 process.load("TrackingTools.TrackAssociator.DetIdAssociatorESProducer_cff")
 
 process.load('MuDPGAnalysis.MuonDPGNtuples.muNtupleProducer_cfi')
+
+
+process.standAloneMuons = process.standAloneMuons.clone()
+process.standAloneMuons.STATrajBuilderParameters.FilterParameters.EnableGEMMeasurement = cms.bool(False)
+process.standAloneMuons.STATrajBuilderParameters.BWFilterParameters.EnableGEMMeasurement = cms.bool(False)
+
+process.standAloneMuons.STATrajBuilderParameters.FilterParameters.CSCRecSegmentLabel = cms.InputTag("cscSegments")
+process.standAloneMuons.STATrajBuilderParameters.FilterParameters.RPCRecSegmentLabel = cms.InputTag("rpcRecHits")
+process.standAloneMuons.STATrajBuilderParameters.FilterParameters.DTRecSegmentLabel = cms.InputTag("dt4DSegments")
+process.standAloneMuons.STATrajBuilderParameters.BWFilterParameters.RPCRecSegmentLabel = cms.InputTag("rpcRecHits")
+process.standAloneMuons.STATrajBuilderParameters.BWFilterParameters.CSCRecSegmentLabel = cms.InputTag("cscSegments")
+process.standAloneMuons.STATrajBuilderParameters.BWFilterParameters.DTRecSegmentLabel = cms.InputTag("dt4DSegments")
+process.ancientMuonSeed.EnableDTMeasurement = False
+process.ancientMuonSeed.CSCRecSegmentLabel = "cscSegments"
+muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuonSeeds * process.standAloneMuons * process.globalMuons)
+
+#process.globalMuons = process.globalMuons.clone()
+#process.globalMuons.MuonCollectionLabel = cms.InputTag("standAloneMuons","UpdatedAtVtx")
+#process.globalMuons.GLBTrajBuilderParameters.GlobalMuonTrackMatcher.Propagator = 'SmartPropagatorRK'
+#process.globalMuons.GLBTrajBuilderParameters.TrackTransformer.Propagator = cms.string('SmartPropagatorAnyRK')
+
+
+#muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuons)
+
 
 process.muNtupleProducer.isMC = cms.bool(options.isMC)
 process.muNtupleProducer.storeOHStatus = cms.bool(options.storeOHStatus)
@@ -172,6 +197,7 @@ if options.reUnpack and options.GE21:
     process.p = cms.Path(
         process.muonGEMDigis *
         process.gemRecHits *
+        muonstandalonereco *
         process.muNtupleProducer)
 elif options.reUnpack:
     process.p = cms.Path(

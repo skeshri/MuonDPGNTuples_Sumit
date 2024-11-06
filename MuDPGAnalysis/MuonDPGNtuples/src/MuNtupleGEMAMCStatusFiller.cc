@@ -32,7 +32,7 @@ void MuNtupleGEMAMCStatusFiller::clear()
     m_OHStatus_linkTO.clear();
 }
 
-void MuNtupleGEMAMCStatusFiller::fill(const edm::Event &ev, const edm::EventSetup &iSetup)
+void MuNtupleGEMAMCStatusFiller::fill(const edm::Event &ev)
 {
     clear();
 

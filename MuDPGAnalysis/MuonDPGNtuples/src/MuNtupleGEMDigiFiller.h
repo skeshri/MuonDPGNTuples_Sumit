@@ -33,7 +33,7 @@ class MuNtupleGEMDigiFiller : public MuNtupleBaseFiller
   virtual void clear() final;
 
   /// Fill tree branches for a given events
-  virtual void fill(const edm::Event & ev, const edm::EventSetup &iSetup) final;
+  virtual void fill(const edm::Event & ev) final;
   
 
  private:

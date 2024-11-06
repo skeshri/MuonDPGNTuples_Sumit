@@ -17,12 +17,9 @@
 #include "DataFormats/Common/interface/TriggerResults.h"
 #include "DataFormats/HLTReco/interface/TriggerEvent.h"
 #include "DataFormats/HLTReco/interface/TriggerObject.h"
-#include "HLTrigger/HLTcore/interface/HLTConfigProvider.h"
-#include "HLTrigger/HLTcore/interface/HLTPrescaleProvider.h"
-// Sumit
-#include "TrackingTools/TrackAssociator/interface/TrackDetectorAssociator.h"
-#include "TrackingTools/TrackAssociator/interface/TrackAssociatorParameters.h"
+#include "FWCore/Common/interface/TriggerNames.h"
 
+#include "DataFormats/GeometryVector/interface/CoordinateSets.h"
 #include <vector>
 #include <fstream>
 #include "TClonesArray.h"
@@ -47,11 +44,8 @@ class MuNtupleGEMMuonFiller : public MuNtupleBaseFiller
   
   /// Clear branches before event filling 
   virtual void clear() final;
-  
-  //std::string getLabel(){return m_label;}
-  void beginRun(const edm::Run&, const edm::EventSetup&); 
  
-  virtual void fill(const edm::Event & ev, const edm::EventSetup& iSetup) final;
+  virtual void fill(const edm::Event & ev) final;
   
  private:
 
@@ -61,8 +55,9 @@ class MuNtupleGEMMuonFiller : public MuNtupleBaseFiller
   edm::EDGetTokenT<CSCSegmentCollection> m_cscSegmentToken;
   edm::EDGetTokenT<GEMRecHitCollection> m_gemRecHitToken;
 
-  edm::EDGetTokenT<edm::TriggerResults>   m_trigResultsToken;
-  edm::EDGetTokenT<trigger::TriggerEvent> m_trigEventToken;
+  //edm::EDGetTokenT<edm::TriggerResults>   m_trigResultsToken;
+  //edm::EDGetTokenT<trigger::TriggerEvent> m_trigEventToken;
+//  edm::EDGetTokenT<edm::TriggerResults> m_trigToken;
 
   const GEMRecHit *findMatchedHit(const float,  const GEMRecHitCollection::range );
   const GEMEtaPartition*  findEtaPartition(const GEMChamber*, const GlobalPoint&);
@@ -101,6 +96,24 @@ class MuNtupleGEMMuonFiller : public MuNtupleBaseFiller
   std::vector<bool> m_isincoming;
   std::vector<bool> m_isinsideout;
   
+  std::vector<int> m_GlobalTrackHits;
+  std::vector<int> m_OuterTrackHits;
+
+  std::vector<int> m_isPFMuon;
+  std::vector<float> m_validFraction;
+  std::vector<float> m_normChi2;
+  std::vector<float> m_chi2LocalPosition;
+  std::vector<int> m_trkKink;
+  std::vector<float> m_segCompatibility;
+  std::vector<int> m_numValidMuonHits;
+  std::vector<int> m_numMatchedStation;
+  std::vector<float> m_dxy;
+  std::vector<float> m_dz;
+  std::vector<int> m_numValidPixelHits;
+  std::vector<int> m_numTrackerLayers;
+
+
+  
   float m_path_length;
 
   std::vector<int> m_propagated_region;
@@ -110,10 +123,28 @@ class MuNtupleGEMMuonFiller : public MuNtupleBaseFiller
   std::vector<int> m_propagated_etaP;
 
   std::vector<float> m_propagated_pt;
+  std::vector<float> m_propagated_isLoose;
+  std::vector<float> m_propagated_isMedium;
+  std::vector<float> m_propagated_isTight;
   std::vector<float> m_propagated_phi;
   std::vector<float> m_propagated_eta;
   std::vector<float> m_propagated_charge;
+  std::vector<bool>  m_propagated_isGlobal;
+  std::vector<bool>  m_propagated_isStandalone;
+  std::vector<bool>  m_propagated_isTracker;
 
+  std::vector<int> m_propagated_isPFMuon;
+  std::vector<float> m_propagated_validFraction;
+  std::vector<float> m_propagated_normChi2;
+  std::vector<float> m_propagated_chi2LocalPosition;
+  std::vector<int> m_propagated_trkKink;
+  std::vector<float> m_propagated_segCompatibility;
+  std::vector<int> m_propagated_numValidMuonHits;
+  std::vector<int> m_propagated_numMatchedStation;
+  std::vector<float> m_propagated_dxy;
+  std::vector<float> m_propagated_dz;
+  std::vector<int> m_propagated_numValidPixelHits;
+  std::vector<int> m_propagated_numTrackerLayers;
   std::vector<float> m_propagated_TrackNormChi2;
 
   std::vector<float> m_propagated_numberOfValidPixelHits;
@@ -147,6 +178,11 @@ class MuNtupleGEMMuonFiller : public MuNtupleBaseFiller
   std::vector<float> m_propagated_EtaPartition_phiMin;
   std::vector<float> m_propagated_EtaPartition_rMax;
   std::vector<float> m_propagated_EtaPartition_rMin;
+  
+  std::vector<float> m_propagated_EtaPartition_yMax;
+  std::vector<float> m_propagated_EtaPartition_yMin;
+  std::vector<float> m_propagated_EtaPartition_xMax;
+  std::vector<float> m_propagated_EtaPartition_xMin;
 
   std::vector<int> m_propagated_nME1hits;
   std::vector<int> m_propagated_nME2hits;
@@ -160,13 +196,8 @@ class MuNtupleGEMMuonFiller : public MuNtupleBaseFiller
   std::vector<float> m_propagated_Outermost_x;
   std::vector<float> m_propagated_Outermost_y;
   std::vector<float> m_propagated_Outermost_z;
-
-
-  // Sumit
-  //TrackDetectorAssociator trackAssociator_;
-  //TrackAssociatorParameters parameters_;
-  //std::unique_ptr<HLTPrescaleProvider> hltConfig_; 
-  HLTConfigProvider hltConfig_;
+//  std::map<std::string, int> m_triggerMap;
+  
 };
 
 

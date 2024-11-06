@@ -66,7 +66,7 @@ void MuNtupleGEMDigiFiller::clear()
 
 }
 
-void MuNtupleGEMDigiFiller::fill(const edm::Event & ev, const edm::EventSetup &iSetup)
+void MuNtupleGEMDigiFiller::fill(const edm::Event & ev)
 {
 
   clear();
@@ -76,13 +76,12 @@ void MuNtupleGEMDigiFiller::fill(const edm::Event & ev, const edm::EventSetup &i
 
   if (gemDigis.isValid())
     {
-      for (auto range_iter = gemDigis->begin(); range_iter != gemDigis->end(); range_iter++) 
+      for (auto range_iter = gemDigis->begin(); range_iter != gemDigis->end(); range_iter++) \
 	{
 	  const GEMDetId& gem_id = (*range_iter).first;
 	  const GEMDigiCollection::Range& range = (*range_iter).second;
-	  const GEMEtaPartition* roll = gem->etaPartition(gem_id);
 
-          const TrapezoidalPlaneBounds* bounds = dynamic_cast<const TrapezoidalPlaneBounds*>(&roll->surface().bounds());
+	  const GEMEtaPartition* roll = gem->etaPartition(gem_id);
 	  const BoundPlane& surface = roll->surface();
 
 	  for (auto digi = range.first; digi != range.second; ++digi) {

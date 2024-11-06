@@ -85,7 +85,7 @@ void MuNtupleGEMRecHitFiller::clear()
   
 }
 
-void MuNtupleGEMRecHitFiller::fill(const edm::Event &ev, const edm::EventSetup &iSetup)
+void MuNtupleGEMRecHitFiller::fill(const edm::Event & ev)
 {
   
   clear();

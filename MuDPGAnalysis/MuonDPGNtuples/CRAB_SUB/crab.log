@@ -65,3 +65,70 @@ DEBUG 2023-10-22 08:53:49.903 UTC: 	 Running on: Linux lxplus717.cern.ch 3.10.0-
 DEBUG 2023-10-22 08:53:49.903 UTC: 	 Executing command: 'submit'
 DEBUG 2023-10-22 08:53:49.905 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
 DEBUG 2023-10-22 08:53:49.905 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2024-07-04 12:38:41.021 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-07-04 12:38:41.021 UTC: 	 Running on: Linux lxplus9109.cern.ch 5.14.0-427.22.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Jun 10 09:23:36 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-07-04 12:38:41.021 UTC: 	 Executing command: 'submit'
+DEBUG 2024-07-04 12:38:41.021 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-07-04 12:38:41.022 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-07-13 10:47:36.582 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-07-13 10:47:36.583 UTC: 	 Running on: Linux lxplus999.cern.ch 5.14.0-427.22.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Jun 10 09:23:36 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-07-13 10:47:36.583 UTC: 	 Executing command: 'submit'
+DEBUG 2024-07-13 10:47:36.583 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-07-13 10:47:36.583 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-07-13 12:05:21.384 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-07-13 12:05:21.385 UTC: 	 Running on: Linux lxplus999.cern.ch 5.14.0-427.22.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Jun 10 09:23:36 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-07-13 12:05:21.385 UTC: 	 Executing command: 'submit'
+DEBUG 2024-07-13 12:05:21.385 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-07-13 12:05:21.385 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-07-21 08:01:06.794 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-07-21 08:01:06.794 UTC: 	 Running on: Linux lxplus932.cern.ch 5.14.0-427.22.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Mon Jun 10 09:23:36 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-07-21 08:01:06.794 UTC: 	 Executing command: 'submit'
+DEBUG 2024-07-21 08:01:06.795 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-07-21 08:01:06.810 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-07-25 10:07:23.326 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-07-25 10:07:23.326 UTC: 	 Running on: Linux lxplus979.cern.ch 5.14.0-427.24.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Sun Jun 23 11:48:35 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-07-25 10:07:23.326 UTC: 	 Executing command: 'resubmit'
+DEBUG 2024-07-25 10:07:23.326 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-07-25 10:08:08.890 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-07-25 10:08:08.890 UTC: 	 Running on: Linux lxplus979.cern.ch 5.14.0-427.24.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Sun Jun 23 11:48:35 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-07-25 10:08:08.890 UTC: 	 Executing command: 'submit'
+DEBUG 2024-07-25 10:08:08.890 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-07-25 10:08:18.249 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-07-25 10:08:18.249 UTC: 	 Running on: Linux lxplus979.cern.ch 5.14.0-427.24.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Sun Jun 23 11:48:35 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-07-25 10:08:18.249 UTC: 	 Executing command: 'recover'
+DEBUG 2024-07-25 10:08:18.249 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-08-22 04:26:26.419 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-08-22 04:26:26.419 UTC: 	 Running on: Linux lxplus978.cern.ch 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jul 19 14:40:47 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-08-22 04:26:26.419 UTC: 	 Executing command: 'submit'
+DEBUG 2024-08-22 04:26:26.420 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-08-22 04:26:26.421 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-08-28 08:11:10.264 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-08-28 08:11:10.264 UTC: 	 Running on: Linux lxplus978.cern.ch 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jul 19 14:40:47 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-08-28 08:11:10.265 UTC: 	 Executing command: 'submit'
+DEBUG 2024-08-28 08:11:10.265 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-08-28 08:11:10.265 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-08-28 08:18:59.667 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-08-28 08:18:59.667 UTC: 	 Running on: Linux lxplus978.cern.ch 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jul 19 14:40:47 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-08-28 08:18:59.667 UTC: 	 Executing command: 'submit'
+DEBUG 2024-08-28 08:18:59.667 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-08-28 08:18:59.668 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-08-28 08:20:11.365 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-08-28 08:20:11.365 UTC: 	 Running on: Linux lxplus978.cern.ch 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jul 19 14:40:47 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-08-28 08:20:11.365 UTC: 	 Executing command: 'submit'
+DEBUG 2024-08-28 08:20:11.365 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-08-28 08:20:11.366 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-08-28 08:21:20.762 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-08-28 08:21:20.762 UTC: 	 Running on: Linux lxplus978.cern.ch 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jul 19 14:40:47 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-08-28 08:21:20.762 UTC: 	 Executing command: 'submit'
+DEBUG 2024-08-28 08:21:20.762 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-08-28 08:21:20.763 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-08-28 08:25:48.928 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-08-28 08:25:48.928 UTC: 	 Running on: Linux lxplus978.cern.ch 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jul 19 14:40:47 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-08-28 08:25:48.929 UTC: 	 Executing command: 'submit'
+DEBUG 2024-08-28 08:25:48.929 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-08-28 08:25:48.930 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+DEBUG 2024-08-28 08:27:26.350 UTC: 	 CRAB Client version: v3.240621
+DEBUG 2024-08-28 08:27:26.350 UTC: 	 Running on: Linux lxplus978.cern.ch 5.14.0-427.28.1.el9_4.x86_64 #1 SMP PREEMPT_DYNAMIC Fri Jul 19 14:40:47 EDT 2024 x86_64 x86_64 x86_64 GNU/Linux - Red Hat Enterprise Linux 9.4 (Plow)
+DEBUG 2024-08-28 08:27:26.350 UTC: 	 Executing command: 'submit'
+DEBUG 2024-08-28 08:27:26.350 UTC: 	 Found CRAB cache file /afs/cern.ch/user/s/skeshri/.crab3
+DEBUG 2024-08-28 08:27:26.351 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).

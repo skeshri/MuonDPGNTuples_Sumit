@@ -117,7 +117,7 @@ void MuNtupleGEMSimHitFiller::clear()
 
 };
 
-void MuNtupleGEMSimHitFiller::fill(const edm::Event &ev, const edm::EventSetup &iSetup)
+void MuNtupleGEMSimHitFiller::fill(const edm::Event & ev)
 {
 
   clear();

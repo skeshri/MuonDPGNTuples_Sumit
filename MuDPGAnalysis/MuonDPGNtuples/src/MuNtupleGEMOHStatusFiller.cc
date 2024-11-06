@@ -44,7 +44,7 @@ void MuNtupleGEMOHStatusFiller::clear()
     m_OHStatus_warnings.clear();
 }
 
-void MuNtupleGEMOHStatusFiller::fill(const edm::Event &ev, const edm::EventSetup &iSetup)
+void MuNtupleGEMOHStatusFiller::fill(const edm::Event &ev)
 {
 
     clear();

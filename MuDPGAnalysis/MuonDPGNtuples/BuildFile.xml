@@ -1,4 +1,6 @@
 <use name="FWCore/Framework"/>
+<use name="FWCore/ServiceRegistry"/>
+<use name="FWCore/PrescaleService"/>
 <use name="FWCore/PluginManager"/>
 <use name="FWCore/ServiceRegistry"/>
 <use name="FWCore/ParameterSet"/>
@@ -22,6 +24,7 @@
 <use name="RecoMuon/TrackingTools"/>
 <use name="TrackingTools/TrackAssociator"/>
 <use name="HLTrigger/HLTcore"/>
+<use name="DataFormats/GeometryVector"/>
 
 <export>
    <lib name="1"/>
