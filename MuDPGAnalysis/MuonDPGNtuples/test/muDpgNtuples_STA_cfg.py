@@ -156,9 +156,10 @@ process.standAloneMuons.STATrajBuilderParameters.BWFilterParameters.DTRecSegment
 process.ancientMuonSeed.EnableDTMeasurement = False
 process.ancientMuonSeed.CSCRecSegmentLabel = "cscSegments"
 
-process.globalMuons = process.globalMuons.clone()
 
 muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuonSeeds * process.standAloneMuons)
+
+#process.globalMuons = process.globalMuons.clone()
 #muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuonSeeds * process.standAloneMuons + process.globalMuons)
 #muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuons)
 
