@@ -22,7 +22,7 @@ options.register('globalTag',
                  "Global Tag")
 
 options.register('nEvents',
-                 #10, #to run on a sub-sample
+                 #100, #to run on a sub-sample
                  -1, #default value
                  VarParsing.VarParsing.multiplicity.singleton,
                  VarParsing.VarParsing.varType.int,
@@ -128,6 +128,8 @@ process.load('RecoMuon.StandAloneMuonProducer.standAloneMuons_cfi')
 process.load('RecoMuon.Configuration.RecoMuonPPonly_cff')
 process.load('Configuration.StandardSequences.RawToDigi_Data_cff')
 process.load("RecoVertex.BeamSpotProducer.BeamSpot_cff")
+process.load("RecoTracker.IterativeTracking.MuonSeededStep_cff")
+process.load("RecoMuon.Configuration.DisplacedMuonSeededStep_cff")
 
 
 ## for global muons
@@ -157,18 +159,58 @@ process.ancientMuonSeed.EnableDTMeasurement = False
 process.ancientMuonSeed.CSCRecSegmentLabel = "cscSegments"
 
 
-muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuonSeeds * process.standAloneMuons)
+#process.globalMuons.MuonServiceProxy.ServiceParameters = dict(GEMLayers = True)
+# run3_GEM
+from Configuration.Eras.Modifier_run3_GEM_cff import run3_GEM
+run3_GEM.toModify(process.MuonServiceProxy,
+    ServiceParameters = dict(GEMLayers = False)
 
-#process.globalMuons = process.globalMuons.clone()
+)
+
+
+process.globalMuons = cms.EDProducer("GlobalMuonProducer",
+    process.MuonServiceProxy,   # Reference to modified MuonServiceProxy
+    MuonTrackLoaderForGLB,
+    GLBTrajBuilderParameters = cms.PSet(
+        GlobalTrajectoryBuilderCommon
+    ),
+    TrackerCollectionLabel = cms.InputTag("generalTracks"),
+    MuonCollectionLabel = cms.InputTag("standAloneMuons", "UpdatedAtVtx"),
+    VertexCollectionLabel = cms.InputTag("offlinePrimaryVertices"),
+    selectHighPurity = cms.bool(False)
+)
+
+process.globalMuons.GLBTrajBuilderParameters.GlobalMuonTrackMatcher.Propagator = 'SmartPropagatorRK'
+process.globalMuons.GLBTrajBuilderParameters.TrackTransformer.Propagator = cms.string('SmartPropagatorAnyRK')
+
+muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuonSeeds * process.standAloneMuons)
 #muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuonSeeds * process.standAloneMuons + process.globalMuons)
 #muonstandalonereco = cms.Sequence(process.offlineBeamSpot + process.standAloneMuons)
+
+
+process.globalmuontrackingTask = cms.Task(process.globalMuons,process.tevMuons,process.displacedGlobalMuonTrackingTask)
+process.globalmuontracking = cms.Sequence(process.globalmuontrackingTask)
+process.muontrackingTask = cms.Task(process.standalonemuontrackingTask,process.globalmuontrackingTask)
+process.muontracking = cms.Sequence(process.muontrackingTask)
+
+# Muon Reconstruction
+process.muonrecoTask = cms.Task(process.muontrackingTask,process.muonIdProducerTask, process.displacedMuonIdProducerTask)
+process.muonreco = cms.Sequence(process.muonrecoTask)
+
+process.muonGlobalRecoTask = cms.Task(process.globalmuontrackingTask,
+                              process.muonIdProducerTask,
+                              process.displacedMuonIdProducerTask,
+                              process.muonSelectionTypeTask,
+                              process.muIsolationTask,
+                              process.muIsolationDisplacedTask)
+process.muonGlobalReco = cms.Sequence(process.muonGlobalRecoTask)
+
 
 
 process.muNtupleProducer.isMC = cms.bool(options.isMC)
 process.muNtupleProducer.storeOHStatus = cms.bool(options.storeOHStatus)
 process.muNtupleProducer.storeAMCStatus = cms.bool(options.storeAMCStatus)
 
-#print(process.dumpPython())
 
 if options.reUnpack and options.GE21:
     process.gemRecHits.ge21Off = cms.bool(not options.GE21) ## user selection GE21 = True means "store GE21 rechits"
@@ -176,6 +218,7 @@ if options.reUnpack and options.GE21:
         process.muonGEMDigis *
         process.gemRecHits *
         muonstandalonereco *
+        process.muonGlobalReco*
         process.muNtupleProducer)
 elif options.reUnpack:
     process.p = cms.Path(
